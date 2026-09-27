@@ -123,18 +123,20 @@ def save_episodes(episodes: List[dict]) -> None:
 
 def apply_human_jitter(skip: bool = False) -> None:
     """
-    Menunda eksekusi antara 0 hingga 9 menit (0-540 detik)
-    agar pola jam tayang Threads selalu bervariasi alami.
+    Menunda eksekusi secara acak agar pola jam tayang Threads selalu bervariasi alami.
+    Didesain efisien agar sangat hemat kuota menit GitHub Actions (repositori private).
+    Dapat disesuaikan lewat env JITTER_MAX_SECONDS (default 60 detik) dan JITTER_MIN_SECONDS (default 10 detik).
     """
     if skip or os.getenv("SKIP_JITTER", "false").lower() in ("true", "1", "yes"):
         logger.info("[JITTER] Dilewati (mode testing).")
         return
 
-    delay_seconds = random.randint(0, 540)
-    delay_minutes = delay_seconds / 60.0
+    min_sec = int(os.getenv("JITTER_MIN_SECONDS", "10"))
+    max_sec = int(os.getenv("JITTER_MAX_SECONDS", "60"))
+    delay_seconds = random.randint(min_sec, max_sec)
     logger.info(
-        f"[JITTER] Menunda pengiriman selama {delay_seconds} detik ({delay_minutes:.2f} menit) "
-        "agar pola waktu posting terlihat natural..."
+        f"[JITTER] Menunda pengiriman selama {delay_seconds} detik "
+        "agar pola jam tayang natural dan tetap hemat kuota GitHub Actions..."
     )
     time.sleep(delay_seconds)
     logger.info("[JITTER] Selesai menunggu, melanjutkan pengunggahan.")
