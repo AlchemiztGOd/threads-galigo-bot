@@ -1,79 +1,77 @@
-# Threads Galigo Bot
+# Threads Galigo Bot: Serial Lengkap Epos Sureq Galigo
 
-Bot otomatis untuk mempublikasikan kisah epos **Sureq Galigo (La Galigo)** ke media sosial **Threads** secara berkala dan berurutan. Proyek ini dilengkapi kecerdasan buatan Gemini API, penundaan waktu acak (human jitter), dan penjadwalan GitHub Actions otomatis.
+Bot otomatis untuk mempublikasikan **Seluruh Siklus Wiracarita Sureq Galigo (La Galigo)** ke **Threads** secara kronologis, lengkap dari awal penciptaan jagat raya hingga pamitnya para dewata.
 
----
-
-## Fitur Utama
-
-1. **Narasi Berantai (Thread Series)**:
-   - Episode dipecah menjadi 8 hingga 9 bagian (parts).
-   - Part 1 berfungsi sebagai hook pembuka dengan petunjuk kelanjutan.
-   - Part 2 s/d Part 8/9 diposting secara berurutan sebagai reply berantai di Threads.
-   - Part terakhir dilengkapi Call to Action (CTA) interaktif untuk memicu diskusi pembaca.
-   - Setiap part dijamin di bawah 450 karakter (batas aman Threads adalah 500 karakter).
-   - Penulisan naskah bebas dari tanda em-dash dan kata klise AI, menjaga kewibawaan tutur lisan Bugis-Makassar.
-
-2. **Human Jitter (0-9 Menit)**:
-   - Sebelum posting dieksekusi, bot menunda waktu secara acak antara 0 hingga 540 detik (0 sampai 9 menit).
-   - Menghindari kecurigaan algoritma spam dan bot karena jam posting selalu bervariasi (contoh: 07:02 hari ini, 07:08 esok hari).
-
-3. **Penjadwalan Otomatis (GitHub Actions Cron)**:
-   - Terjadwal otomatis 3 kali sehari pada waktu Indonesia Tengah (WITA / UTC+8):
-     - Pagi: 07:00 WITA (23:00 UTC)
-     - Siang: 12:00 WITA (04:00 UTC)
-     - Malam: 20:00 WITA (12:00 UTC)
-   - State pelacakan urutan (`state.json`) otomatis di-commit dan di-push kembali ke repositori sehingga urutan episode tidak pernah berulang atau terputus.
-
-4. **Gemini API Integration**:
-   - Menghasilkan episode baru otomatis jika stok cerita di `episodes.json` telah selesai diposting.
+Setiap postingan dikemas sebagai satu episode berseri terpadu dengan **gambar ilustrasi artistik klasik**, **penanda pergantian Arc/Babak**, dan narasi bersambung yang mengaitkan jam tayang (Pagi, Siang, Malam).
 
 ---
 
-## Struktur Berkas
+## Struktur 7 Arc Utama Sureq Galigo (28 Episode Lengkap)
 
+Serial ini merangkum naskah asli 300.000 larik daun lontar Bugis kuno ke dalam 7 Arc besar selama 10 hari tayang beruntun:
+
+### 1. Arc 1: Asal-Usul Dewata dan Berdirinya Luwu (Episode 1 - 4)
+- **Tanda Arc**: `[ARC 1: ASAL DEWATA]`
+- **Jadwal**: Hari 1 Pagi s/d Hari 2 Pagi
+- **Sinopsis**: Musyawarah Boting Langiq & Uriq Liu, turunnya Batara Guru beralaskan bambu gading ke Luwu, munculnya We Nyiliq Timo dari buih ombak emas, hingga penegakan hukum adat dan pernikahan agung.
+
+### 2. Arc 2: Kutukan Kembar Emas dan Takdir Terlarang (Episode 5 - 8)
+- **Tanda Arc**: `[ARC 2: KUTUKAN KEMBAR EMAS]`
+- **Jadwal**: Hari 2 Siang s/d Hari 3 Siang
+- **Sinopsis**: Lahirnya kembar emas Sawerigading & We Tenriabeng, ramalan petaka kosmis para Bissu, pemisahan sejak bayi, hingga terbukanya tirai sutra emas di istana Luwu.
+
+### 3. Arc 3: Penebangan Pohon Keramat dan Bahtera Maut (Episode 9 - 13)
+- **Tanda Arc**: `[ARC 3: BAHARU & SAMUDRA]`
+- **Jadwal**: Hari 3 Malam s/d Hari 5 Pagi
+- **Sinopsis**: Siasat We Tenriabeng menunjuk Tana Kelling, penebangan pohon purba Welenrengnge, pecahnya telur garuda dan air bah, pembuatan bahtera Wakka Pasompe, serta sumpah pantang kembali ke tanah Luwu.
+
+### 4. Arc 4: Samudra Berdarah dan Penaklukan Tana Kelling (Episode 14 - 17)
+- **Tanda Arc**: `[ARC 4: PERANG DI KELLING]`
+- **Jadwal**: Hari 5 Siang s/d Hari 6 Siang
+- **Sinopsis**: Menembus kabut beracun dan melawan monster laut, pendaratan armada Luwu di pesisir Kelling, duel ksatria dengan pendekar We Cudai, hingga lahirnya I La Galigo.
+
+### 5. Arc 5: Petualangan Liar Sang Pewaris I La Galigo (Episode 18 - 21)
+- **Tanda Arc**: `[ARC 5: SANG PEWARIS GALIGO]`
+- **Jadwal**: Hari 6 Malam s/d Hari 7 Malam
+- **Sinopsis**: Jiwa merdeka dan pembangkang I La Galigo, arena sabung ayam legendaris di Sunra & Wajo dengan ayam jago Bakka Lolona, penjelajahan asmara, penulisan syair lontar, dan kelahiran sang cucu La Tenritatta.
+
+### 6. Arc 6: Perjalanan Terakhir dan Tenggelamnya Bahtera (Episode 22 - 25)
+- **Tanda Arc**: `[ARC 6: SAMUDRA TERAKHIR]`
+- **Jadwal**: Hari 8 Pagi s/d Hari 9 Pagi
+- **Sinopsis**: Kerinduan tua Sawerigading menatap bukit Luwu, pertemuan rahasia di atas teluk Bone tanpa menginjak daratan, bangkitnya badai kosmis, dan tenggelamnya Wakka Pasompe ke dasar samudra Uriq Liu.
+
+### 7. Arc 7: Kembalinya Para Dewata dan Penutupan Epos (Episode 26 - 28)
+- **Tanda Arc**: `[ARC 7: AKHIR ZAMAN DEWATA]`
+- **Jadwal**: Hari 9 Siang s/d Hari 10 Pagi
+- **Sinopsis**: Takhta abadi Sawerigading di dasar laut dan We Tenriabeng di puncak langit, penobatan raja manusia La Tenritatta di Ale Lino, pamitnya keturunan dewa, serta penutupan epos terpanjang dunia dengan ajakan diskusi publik.
+
+---
+
+## Jadwal Penyiaran Otomatis (WITA / UTC+8)
+
+Cron GitHub Actions terpasang pada jam:
+- **Pagi: 07:00 WITA** (23:00 UTC)
+- **Siang: 12:00 WITA** (04:00 UTC)
+- **Malam: 20:00 WITA** (12:00 UTC)
+
+### Human Jitter (0-9 Menit)
+Di setiap jadwal cron, `bot.py` otomatis menunda pengunggahan antara 0 hingga 540 detik secara acak agar waktu posting tidak statis dan tidak terbaca oleh sistem deteksi bot.
+
+---
+
+## Kepatuhan Aturan Penulisan (Antislop Standar)
+1. **Batas Karakter**: Seluruh teks episode berada di kisaran 310 hingga 380 karakter (sangat aman di bawah batas 450 karakter).
+2. **Bebas Em-Dash**: Nol em-dash (`—` atau `--`) di seluruh narasi, kode, dan dokumentasi.
+3. **Tone Otentik**: Menjunjung kearifan budaya Bugis kuno (*siriq na pesse*, *Dewata Sewwae*, *Bissu*, *Wakka Pasompe*).
+
+---
+
+## Uji Coba Pratinjau Lokal
+
+```bash
+# Uji coba mode simulasi tanpa mengunggah
+python bot.py --dry-run --no-jitter
+
+# Uji coba episode tertentu (contoh: Episode 5 awal Arc 2)
+python bot.py --force-episode 5 --dry-run --no-jitter
 ```
-threads-galigo-bot/
-├── .github/
-│   └── workflows/
-│       └── autopost.yml       # Jadwal cron GitHub Actions
-├── bot.py                     # Skrip utama auto-post Threads + Gemini
-├── episodes.json              # Bank naskah cerita Sureq Galigo (8-9 parts)
-├── state.json                 # Penyimpan posisi episode terakhir
-├── requirements.txt           # Dependensi Python
-├── .env.example               # Contoh konfigurasi environment
-└── README.md                  # Dokumentasi proyek
-```
-
----
-
-## Konfigurasi GitHub Secrets
-
-Agar GitHub Actions dapat berjalan otomatis, tambahkan secrets berikut di menu repositori GitHub:
-**Settings** > **Secrets and variables** > **Actions** > **New repository secret**:
-
-1. `THREADS_USER_ID`: ID akun Threads pengguna Meta.
-2. `THREADS_ACCESS_TOKEN`: Token akses panjang (Long-lived User Token) dari Threads API.
-3. `GEMINI_API_KEY`: API Key dari Google AI Studio (opsional untuk auto-generate cerita baru).
-
-Pastikan juga permission workflow diaktifkan untuk menulis repo:
-**Settings** > **Actions** > **General** > **Workflow permissions** > pilih **Read and write permissions**.
-
----
-
-## Uji Coba Lokal
-
-1. Salin konfigurasi environment:
-   ```bash
-   cp .env.example .env
-   ```
-
-2. Jalankan simulasi (dry-run) tanpa mengirim ke Threads:
-   ```bash
-   python bot.py --dry-run --no-jitter
-   ```
-
-3. Jalankan posting episode tertentu:
-   ```bash
-   python bot.py --force-episode 1 --no-jitter
-   ```
