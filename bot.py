@@ -295,8 +295,25 @@ def main():
     # Eksekusi Human Jitter 0-9 menit
     apply_human_jitter(skip=args.no_jitter)
 
-    threads_user_id = os.getenv("THREADS_USER_ID", "")
-    threads_token = os.getenv("THREADS_ACCESS_TOKEN", "")
+    threads_user_id = os.getenv("THREADS_USER_ID", "").strip()
+    threads_token = os.getenv("THREADS_ACCESS_TOKEN", "").strip()
+
+    # Jika THREADS_USER_ID belum diisi tetapi THREADS_ACCESS_TOKEN tersedia, ambil ID otomatis
+    if not threads_user_id and threads_token and not args.dry_run:
+        try:
+            logger.info("THREADS_USER_ID belum diisi, mencoba mengambil otomatis via Threads API...")
+            me_resp = requests.get(
+                f"https://graph.threads.net/v1.0/me?fields=id,username&access_token={threads_token}",
+                timeout=15
+            )
+            if me_resp.ok:
+                me_data = me_resp.json()
+                threads_user_id = me_data.get("id", "")
+                logger.info(f"Berhasil mendeteksi User ID otomatis: {threads_user_id} (Akun: @{me_data.get('username')})")
+            else:
+                logger.warning(f"Gagal mengambil ID dari /me: {me_resp.text}")
+        except Exception as e:
+            logger.warning(f"Error saat mengambil ID otomatis: {e}")
 
     dry_run = args.dry_run or (not threads_user_id or not threads_token)
     if dry_run and not args.dry_run:
