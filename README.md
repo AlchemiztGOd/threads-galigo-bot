@@ -68,7 +68,14 @@ Di setiap jadwal cron, `bot.py` otomatis menunda pengunggahan antara 0 hingga 54
 
 ---
 
-## Uji Coba Pratinjau Lokal
+## Sistem Anti Limit Gemini API (4 Lapisan Pertahanan)
+1. **Konsumsi Sangat Hemat**: Jadwal tayang adalah 3 kali per hari, sehingga hanya memakan 3 request dari total kuota gratis 1.500 request per hari (hanya 0,2% kuota).
+2. **Bank Cadangan Lokal (28 Episode)**: Selama 10 hari pertama, bot membaca langsung naskah lokal tanpa menyentuh kuota Gemini API.
+3. **Multi-Model Auto-Fallback**: Jika model `gemini-1.5-flash` terkena rate limit (HTTP 429), bot otomatis mencoba model `gemini-2.0-flash` dan `gemini-1.5-pro`.
+4. **Dukungan Multi-Key**: Anda bisa memasukkan lebih dari satu API key di `GEMINI_API_KEY` dengan memisahkannya menggunakan tanda koma (contoh: `kunci1,kunci2`).
+5. **Emergency Fallback Vault**: Jika seluruh kuota Gemini API habis total, bot otomatis mengaktifkan naskah darurat kearifan kultural Bugis-Makassar sehingga jadwal tayang **tidak akan pernah macet atau gagal**.
+
+---
 
 ```bash
 # Uji coba mode simulasi tanpa mengunggah

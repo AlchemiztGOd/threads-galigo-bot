@@ -224,7 +224,12 @@ class ThreadsPoster:
             return None
         return resp.json().get("id")
 
-def generate_next_episode_with_gemini(episode_id: int, api_key: str) -> Optional[dict]:
+def get_emergency_fallback_episode(episode_id: int) -> dict:
+    """
+    Cadangan darurat jika seluruh kuota Gemini API habis terkena limit 429.
+    Menghasilkan episode kultural bermutu tinggi tentang kearifan Bugis-Makassar
+    sehingga jadwal posting tidak pernah macet atau gagal.
+    """
     era_name, theme_name, is_start = get_content_era(episode_id)
     slot_num = ((episode_id - 1) % 3)
     slots = ["Pagi (07:00 WITA)", "Siang (12:00 WITA)", "Malam (20:00 WITA)"]
@@ -232,7 +237,40 @@ def generate_next_episode_with_gemini(episode_id: int, api_key: str) -> Optional
     next_slot = slots[(slot_num + 1) % 3]
     day_num = ((episode_id - 1) // 3) + 1
 
-    logger.info(f"Menghubungi Gemini API untuk memproduksi Episode {episode_id} ({theme_name})...")
+    fallbacks = [
+        ("Kearifan Falsafah Siriq na Pesse", "Dalam tradisi agung Bugis kuno, manusia dipandu oleh nilai Siriq na Pesse: keteguhan menjaga martabat serta kelembutan merasakan pedih sesama. Bila martabat hilang, sirnalah kemanusiaan. Leluhur Luwu mengajarkan bahwa ksatria sejati tak diukur dari kilau kerisnya, melainkan dari keteguhan janjinya."),
+        ("Hukum Laut Abadi Amanna Gappa", "Jauh sebelum navigasi modern lahir, pelaut Bugis telah melayari samudra Nusantara berbekal piagam hukum laut Amanna Gappa. Piagam ini mengatur sewa muatan, keselamatan awak perahu, dan tata kesopanan di dermaga asing. Laut dipandang bukan sebagai pemisah pulau, melainkan jalan raya kemakmuran."),
+        ("Pappaseng: Pesan Suci Para Leluhur", "Tetua bijak masa lampau mewariskan petuah: Ada empat tiang penegak negeri, yaitu kejujuran para hakim, keberanian para prajurit, kearifan para cendekiawan, dan kerajinan rakyat jelata. Jika salah satu tiang ini patah, goyahlah ketenteraman seluruh jagat."),
+        ("Misteri Pohon Sakral dan Bahtera", "Mitos bahtera Wakka Pasompe menyimpan pesan ekologis luhur: menebang pohon raksasa keramat selalu membawa konsekuensi badai air bah. Nenek moyang mengingatkan agar setiap penaklukan alam senantiasa diiringi ritual permohonan maaf dan penghormatan kepada sang pencipta semesta."),
+        ("Keteguhan Jiwa Pelaut Bugis", "Ketika layar perahu telah terkembang dan kemudi telah terpasang, pantang bagi pelaut Bugis untuk surut ke pantai. Ombak samudra yang menggunung dan badai kelam dihadapi dengan dada tegak. Jiwa bahari inilah yang mengantarkan armada Nusantara mengelilingi dunia.")
+    ]
+
+    chosen_title, chosen_story = fallbacks[(episode_id - 1) % len(fallbacks)]
+    prefix = f"[CATATAN BUDAYA: {theme_name.upper()}]\n" if is_start else ""
+    text = f"{prefix}{chosen_story} Simak kelanjutan kisahnya {next_slot}!"
+    text = clean_and_verify_text(text)
+
+    logger.info(f"[EMERGENCY VAULT] Menggunakan naskah cadangan budaya bermutu untuk Episode {episode_id}")
+
+    return {
+        "id": episode_id,
+        "arc": theme_name,
+        "arc_change": is_start,
+        "slot": f"Hari {day_num} - {current_slot}",
+        "title": chosen_title,
+        "text": text,
+        "image_path": f"images/episode_{episode_id}.jpg",
+        "image_raw_url": f"https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_{episode_id}.jpg",
+        "image_prompt": "Epic classical Bugis Indonesian heritage oil painting, museum quality 8k"
+    }
+
+def generate_next_episode_with_gemini(episode_id: int, api_keys_input: str) -> Optional[dict]:
+    era_name, theme_name, is_start = get_content_era(episode_id)
+    slot_num = ((episode_id - 1) % 3)
+    slots = ["Pagi (07:00 WITA)", "Siang (12:00 WITA)", "Malam (20:00 WITA)"]
+    current_slot = slots[slot_num]
+    next_slot = slots[(slot_num + 1) % 3]
+    day_num = ((episode_id - 1) // 3) + 1
 
     prompt = f"""Kamu adalah sejarawan ulung, budayawan Bugis-Makassar, dan pencerita mitologi serta sejarah Nusantara berwibawa.
 Tugasmu adalah menyusun naskah Episode {episode_id} untuk serial berkelanjutan di Threads.
@@ -260,23 +298,38 @@ Keluarkan HANYA format JSON valid berikut:
   "image_prompt": "Epic classical Bugis Indonesian historical art painting of..."
 }}
 """
-    try:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
-        payload = {
-            "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": 0.7, "response_mime_type": "application/json"}
-        }
-        res = requests.post(url, json=payload, timeout=60)
-        res.raise_for_status()
-        data = res.json()
-        parsed = json.loads(data["candidates"][0]["content"]["parts"][0]["text"])
-        parsed["text"] = clean_and_verify_text(parsed.get("text", ""))
-        parsed["image_path"] = f"images/episode_{episode_id}.jpg"
-        parsed["image_raw_url"] = f"https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_{episode_id}.jpg"
-        return parsed
-    except Exception as e:
-        logger.error(f"Gagal generate episode via Gemini API: {e}")
-        return None
+    # Dukungan multi-key: pisahkan berdasarkan koma jika ada beberapa API key cadangan
+    keys = [k.strip() for k in api_keys_input.split(",") if k.strip()]
+    models = ["gemini-1.5-flash", "gemini-2.0-flash", "gemini-1.5-pro"]
+
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"temperature": 0.7, "response_mime_type": "application/json"}
+    }
+
+    for key_idx, key in enumerate(keys, 1):
+        for model in models:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
+            try:
+                logger.info(f"Mencoba Gemini API (Key #{key_idx}, Model: {model}) untuk Episode {episode_id}...")
+                res = requests.post(url, json=payload, timeout=45)
+                if res.status_code == 429:
+                    logger.warning(f"Key #{key_idx} pada model {model} mencapai kuota/rate-limit harian (429). Mencoba alternatif...")
+                    continue
+                res.raise_for_status()
+                data = res.json()
+                raw_json = data["candidates"][0]["content"]["parts"][0]["text"]
+                parsed = json.loads(raw_json)
+                parsed["text"] = clean_and_verify_text(parsed.get("text", ""))
+                parsed["image_path"] = f"images/episode_{episode_id}.jpg"
+                parsed["image_raw_url"] = f"https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_{episode_id}.jpg"
+                logger.info(f"Sukses menghasilkan Episode {episode_id} via Gemini {model}!")
+                return parsed
+            except Exception as e:
+                logger.warning(f"Percobaan dengan {model} gagal: {e}")
+
+    logger.error("Seluruh kuota Gemini API habis atau terkena rate limit. Mengaktifkan Emergency Fallback Vault...")
+    return get_emergency_fallback_episode(episode_id)
 
 def main():
     parser = argparse.ArgumentParser(description="Bot Auto-Post Serial Epos Nusantara Tanpa Henti")
