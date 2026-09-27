@@ -97,7 +97,13 @@ def load_state() -> dict:
                 return json.load(f)
         except Exception as e:
             logger.warning(f"Gagal membaca state.json: {e}. Menggunakan state awal.")
-    return {"current_episode_id": 1, "last_posted_at": None, "history": []}
+    return {
+        "current_episode_id": 1,
+        "last_posted_at": None,
+        "history": [],
+        "threads_access_token": None,
+        "token_last_refreshed_at": None
+    }
 
 def save_state(state: dict) -> None:
     with open(STATE_FILE, "w", encoding="utf-8") as f:
@@ -140,6 +146,35 @@ def clean_and_verify_text(text: str, max_chars: int = 450) -> str:
         logger.warning(f"Teks melebihi batas {max_chars} karakter ({len(cleaned)}). Memotong secara aman...")
         cleaned = cleaned[:max_chars - 3] + "..."
     return cleaned
+
+def refresh_threads_access_token(current_token: str) -> Optional[dict]:
+    """
+    Memperpanjang masa aktif long-lived Threads access token secara otomatis.
+    Endpoint resmi Meta Threads:
+    GET https://graph.threads.net/refresh_access_token?grant_type=th_refresh_token&access_token={token}
+    Token yang berumur minimal 24 jam akan di-reset masa aktifnya menjadi 60 hari (5.184.000 detik).
+    """
+    if not current_token:
+        return None
+    try:
+        url = "https://graph.threads.net/refresh_access_token"
+        params = {
+            "grant_type": "th_refresh_token",
+            "access_token": current_token
+        }
+        resp = requests.get(url, params=params, timeout=20)
+        if resp.ok:
+            data = resp.json()
+            expires_in = data.get("expires_in", 5184000)
+            days = expires_in // 86400
+            logger.info(f"Berhasil memperpanjang token Threads otomatis! Masa aktif di-reset: {days} hari ({expires_in} detik).")
+            return data
+        else:
+            logger.warning(f"Respon perpanjangan token Threads: {resp.text}")
+            return None
+    except Exception as e:
+        logger.error(f"Gagal menghubungi server Meta untuk perpanjangan token: {e}")
+        return None
 
 class ThreadsPoster:
     def __init__(self, user_id: str, access_token: str, dry_run: bool = False):
@@ -248,10 +283,45 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Uji coba tanpa posting ke Threads")
     parser.add_argument("--no-jitter", action="store_true", help="Lewati penundaan human jitter 0-9 menit")
     parser.add_argument("--force-episode", type=int, help="Paksa nomor episode tertentu")
+    parser.add_argument("--refresh-token", action="store_true", help="Perpanjang masa aktif token Threads ke Meta API sekarang")
     args = parser.parse_args()
 
     state = load_state()
     episodes = load_episodes()
+
+    # Prioritaskan token aktif hasil perpanjangan di state.json, lalu fallback ke environment variable
+    stored_token = state.get("threads_access_token")
+    threads_token = (stored_token or os.getenv("THREADS_ACCESS_TOKEN", "")).strip()
+
+    # Periksa apakah perlu memperpanjang masa aktif token (jika sudah >= 7 hari atau diminta via argumen)
+    last_refresh_str = state.get("token_last_refreshed_at")
+    should_refresh = args.refresh_token
+    if not should_refresh and threads_token:
+        if not last_refresh_str:
+            should_refresh = True
+        else:
+            try:
+                last_dt = datetime.datetime.fromisoformat(last_refresh_str)
+                now_dt = datetime.datetime.now(datetime.timezone.utc)
+                if (now_dt - last_dt).days >= 7:
+                    should_refresh = True
+            except Exception:
+                should_refresh = True
+
+    if should_refresh and threads_token and not args.dry_run:
+        logger.info("Memeriksa dan memperpanjang masa aktif token Threads ke Meta API...")
+        refresh_res = refresh_threads_access_token(threads_token)
+        if refresh_res and refresh_res.get("access_token"):
+            new_token = refresh_res.get("access_token")
+            threads_token = new_token
+            state["threads_access_token"] = new_token
+            state["token_last_refreshed_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+            save_state(state)
+            logger.info("Token baru telah tersimpan di state.json dan akan di-commit otomatis ke repositori.")
+
+    if args.refresh_token:
+        logger.info("Mode perpanjangan token selesai dieksekusi.")
+        return
 
     target_id = args.force_episode or state.get("current_episode_id", 1)
     logger.info(f"Target Episode: {target_id}")
@@ -296,7 +366,6 @@ def main():
     apply_human_jitter(skip=args.no_jitter)
 
     threads_user_id = os.getenv("THREADS_USER_ID", "").strip()
-    threads_token = os.getenv("THREADS_ACCESS_TOKEN", "").strip()
 
     # Jika THREADS_USER_ID belum diisi tetapi THREADS_ACCESS_TOKEN tersedia, ambil ID otomatis
     if not threads_user_id and threads_token and not args.dry_run:

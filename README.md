@@ -59,10 +59,12 @@ Di setiap jadwal cron, `bot.py` otomatis menunda pengunggahan antara 0 hingga 54
 
 ---
 
-## Kepatuhan Aturan Penulisan (Antislop Standar)
-1. **Batas Karakter**: Seluruh teks episode berada di kisaran 310 hingga 380 karakter (sangat aman di bawah batas 450 karakter).
-2. **Bebas Em-Dash**: Nol em-dash (`—` atau `--`) di seluruh narasi, kode, dan dokumentasi.
-3. **Tone Otentik**: Menjunjung kearifan budaya Bugis kuno (*siriq na pesse*, *Dewata Sewwae*, *Bissu*, *Wakka Pasompe*).
+## Fitur Auto-Refresh Token Threads (Bebas Expired)
+- Token akses panjang (*Long-Lived User Token*) Threads dari Meta memiliki masa aktif awal 60 hari.
+- `bot.py` secara otomatis memeriksa usia token. Setiap 7 hari sekali (atau jika belum pernah diperpanjang), bot menghubungi endpoint resmi Meta:
+  `GET https://graph.threads.net/refresh_access_token?grant_type=th_refresh_token&access_token=...`
+- Masa aktif token otomatis di-reset kembali menjadi 60 hari ke depan, lalu disimpan di `state.json` dan di-commit otomatis ke repositori oleh GitHub Actions.
+- Dengan mekanisme ini, token Anda **tidak akan pernah kedaluwarsa** dan bot dapat berjalan selamanya tanpa perlu perpanjangan manual.
 
 ---
 

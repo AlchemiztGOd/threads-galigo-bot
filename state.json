@@ -1,5 +1,7 @@
 {
   "current_episode_id": 1,
   "last_posted_at": null,
-  "history": []
+  "history": [],
+  "threads_access_token": null,
+  "token_last_refreshed_at": null
 }
