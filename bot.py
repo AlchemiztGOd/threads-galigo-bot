@@ -237,7 +237,7 @@ Keluarkan HANYA format JSON valid berikut:
         parsed = json.loads(data["candidates"][0]["content"]["parts"][0]["text"])
         parsed["text"] = clean_and_verify_text(parsed.get("text", ""))
         parsed["image_path"] = f"images/episode_{episode_id}.jpg"
-        parsed["image_raw_url"] = f"https://raw.githubusercontent.com/Versi3Dvision/threads-galigo-bot/main/images/episode_{episode_id}.jpg"
+        parsed["image_raw_url"] = f"https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_{episode_id}.jpg"
         return parsed
     except Exception as e:
         logger.error(f"Gagal generate episode via Gemini API: {e}")
