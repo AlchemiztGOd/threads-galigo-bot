@@ -176,7 +176,42 @@ def refresh_threads_access_token(current_token: str) -> Optional[dict]:
             return None
     except Exception as e:
         logger.error(f"Gagal menghubungi server Meta untuk perpanjangan token: {e}")
+def get_public_image_url(image_rel_path: str) -> Optional[str]:
+    """
+    Menghasilkan URL publik untuk gambar agar dapat diunduh oleh server Meta Threads:
+    1. Pastikan berkas gambar ada secara fisik di disk lokal runner.
+    2. Jika repo private dan GITHUB_TOKEN tersedia di runner, minta signed download_url
+       ke GitHub Contents API (URL bertanda tangan ini dapat diunduh publik selama beberapa menit).
+    3. Jika repo public atau token tidak disetel, gunakan format URL raw GitHub.
+    """
+    if not image_rel_path:
         return None
+
+    local_path = os.path.join(BASE_DIR, image_rel_path)
+    if not os.path.exists(local_path):
+        return None
+
+    clean_path = image_rel_path.replace("\\", "/").lstrip("/")
+    github_token = os.getenv("GITHUB_TOKEN", "").strip()
+    github_repo = os.getenv("GITHUB_REPOSITORY", "AlchemiztGOd/threads-galigo-bot").strip()
+
+    if github_token and github_repo:
+        try:
+            api_url = f"https://api.github.com/repos/{github_repo}/contents/{clean_path}"
+            headers = {
+                "Authorization": f"Bearer {github_token}",
+                "Accept": "application/vnd.github.v3+json"
+            }
+            resp = requests.get(api_url, headers=headers, timeout=15)
+            if resp.ok:
+                download_url = resp.json().get("download_url")
+                if download_url:
+                    logger.info("Berhasil membuat signed download_url sementara via GitHub API untuk repo private.")
+                    return download_url
+        except Exception as e:
+            logger.warning(f"Gagal mengambil signed download_url via GitHub API: {e}")
+
+    return f"https://raw.githubusercontent.com/{github_repo}/main/{clean_path}"
 
 class ThreadsPoster:
     def __init__(self, user_id: str, access_token: str, dry_run: bool = False):
@@ -444,9 +479,11 @@ def main():
         logger.warning("Kredensial Threads API belum diisi. Menjalankan dalam mode simulasi DRY-RUN.")
 
     poster = ThreadsPoster(user_id=threads_user_id, access_token=threads_token, dry_run=dry_run)
-    valid_image_url = image_url if os.path.exists(local_image) else None
-    if not valid_image_url and image_url:
+    valid_image_url = get_public_image_url(current_episode.get("image_path", ""))
+    if not valid_image_url:
         logger.info("Gambar lokal belum tersedia, memposting dengan format teks murni.")
+    else:
+        logger.info("URL gambar siap dikirimkan ke Meta Threads.")
 
     container_id = poster.create_media_container(text=text, image_url=valid_image_url)
     if not container_id:
@@ -460,8 +497,8 @@ def main():
 
     logger.info(f"Sukses mempublikasikan Episode {target_id} ke Threads! (ID: {post_id})")
 
-    # Perbarui urutan ke episode selanjutnya
-    if not dry_run or args.force_episode is None:
+    # Perbarui urutan ke episode selanjutnya (hanya disimpan bila posting nyata)
+    if not dry_run:
         state["current_episode_id"] = target_id + 1
         state["last_posted_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
         state["history"].append({
@@ -471,11 +508,13 @@ def main():
             "slot": slot,
             "post_id": post_id,
             "posted_at": state["last_posted_at"],
-            "image_url": image_url,
-            "mode": "live" if not dry_run else "dry-run"
+            "image_url": valid_image_url,
+            "mode": "live"
         })
         save_state(state)
         logger.info(f"Episode berikutnya yang dijadwalkan: Episode {state['current_episode_id']}")
+    else:
+        logger.info(f"[DRY-RUN] Simulasi penayangan Episode {target_id} berhasil. state.json tidak diubah.")
 
 if __name__ == "__main__":
     main()
