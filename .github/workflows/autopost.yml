@@ -7,7 +7,7 @@ on:
     # 07:00 WITA = 23:00 UTC (hari sebelumnya)
     # 12:00 WITA = 04:00 UTC
     # 20:00 WITA = 12:00 UTC
-    - cron: '0 23,4,12 * * *'
+    - cron: '5 23,4,12 * * *'
   workflow_dispatch:
     inputs:
       force_episode:
