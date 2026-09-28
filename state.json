@@ -1,7 +1,18 @@
 {
-  "current_episode_id": 1,
-  "last_posted_at": null,
-  "history": [],
-  "threads_access_token": null,
-  "token_last_refreshed_at": null
+  "current_episode_id": 2,
+  "last_posted_at": "2026-09-28T01:27:08.516619+00:00",
+  "history": [
+    {
+      "episode_id": 1,
+      "title": "Awal Mula Penciptaan Jagat Raya",
+      "arc": "Arc 1: Asal-Usul Dewata dan Berdirinya Luwu",
+      "slot": "Hari 1 - Pagi (07:00 WITA)",
+      "post_id": "17962154850207315",
+      "posted_at": "2026-09-28T01:27:08.516619+00:00",
+      "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_1.jpg",
+      "mode": "live"
+    }
+  ],
+  "threads_access_token": "THAAZCZBL8nQUDdBYmFCMjFUM21uaHJJeENWcC1BV2pfSGlXQUtRd1FsOUVfV1ZAWMDdEZAkZAobWlydkNJMXJsVkhVMHhETXVZASnFkLVN0TXY5UDM4YXdMeDY2cGJWV2w3eWxhZAm1iUURqZAUxWeUlncnM3ZAjhjU1h3aWJNYjBSdFpTUjlrQQZDZD",
+  "token_last_refreshed_at": "2026-09-28T01:26:34.417561+00:00"
 }
