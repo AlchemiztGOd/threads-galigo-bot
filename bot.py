@@ -220,10 +220,10 @@ class ThreadsPoster:
         self.dry_run = dry_run
         self.base_url = "https://graph.threads.net/v1.0"
 
-    def create_media_container(self, text: str, image_url: Optional[str] = None) -> Optional[str]:
+    def create_media_container(self, text: str, image_url: Optional[str] = None, reply_to_id: Optional[str] = None) -> Optional[str]:
         if self.dry_run:
             fake_id = f"mock_container_{int(time.time() * 1000)}"
-            logger.info(f"[DRY-RUN] Buat container media (image={image_url is not None}) -> ID: {fake_id}")
+            logger.info(f"[DRY-RUN] Buat container media (image={image_url is not None}, reply_to={reply_to_id}) -> ID: {fake_id}")
             return fake_id
 
         url = f"{self.base_url}/{self.user_id}/threads"
@@ -236,6 +236,9 @@ class ThreadsPoster:
             payload["image_url"] = image_url
         else:
             payload["media_type"] = "TEXT"
+
+        if reply_to_id:
+            payload["reply_to_id"] = reply_to_id
 
         resp = requests.post(url, data=payload, timeout=30)
         if not resp.ok:
@@ -261,33 +264,95 @@ class ThreadsPoster:
             return None
         return resp.json().get("id")
 
+    def publish_thread(self, parts: List[str], image_url: Optional[str] = None) -> Optional[List[str]]:
+        """
+        Mempublikasikan serial multi-post (Utas / Thread) bersambung:
+        - Postingan 1 (Root): Teks Bagian 1 + Lukisan Resolusi Tinggi
+        - Postingan 2 dst: Dibalas berantai secara linier di bawah postingan sebelumnya
+        Memungkinkan total narasi mencapai 400-450 kata utuh tanpa melanggar batas karakter Threads.
+        """
+        if not parts:
+            return None
+
+        published_ids = []
+        parent_id = None
+
+        for idx, part_text in enumerate(parts):
+            is_root = (idx == 0)
+            img = image_url if is_root else None
+
+            logger.info(f"Mempersiapkan Utas Bagian {idx + 1}/{len(parts)} ({len(part_text)} karakter)...")
+            container_id = self.create_media_container(text=part_text, image_url=img, reply_to_id=parent_id)
+            if not container_id:
+                logger.error(f"Gagal membuat container untuk Utas Bagian {idx + 1}")
+                break
+
+            post_id = self.publish_container(container_id)
+            if not post_id:
+                logger.error(f"Gagal mempublikasikan Utas Bagian {idx + 1}")
+                break
+
+            published_ids.append(post_id)
+            parent_id = post_id
+            logger.info(f"Sukses menerbitkan Utas Bagian {idx + 1}/{len(parts)} (ID: {post_id})")
+
+            # Beri jeda antar balasan agar aman dari rate-limit Meta Threads
+            if not self.dry_run and idx < len(parts) - 1:
+                time.sleep(4)
+
+        return published_ids if published_ids else None
+
 def get_emergency_fallback_episode(episode_id: int) -> dict:
     """
     Cadangan darurat jika seluruh kuota Gemini API habis terkena limit 429.
     Menghasilkan episode kultural bermutu tinggi tentang kearifan Bugis-Makassar
+    dalam format Utas / Thread panjang (~400-450 kata / 4-5 bagian)
     sehingga jadwal posting tidak pernah macet atau gagal.
     """
     era_name, theme_name, is_start = get_content_era(episode_id)
     slot_num = ((episode_id - 1) % 3)
-    slots = ["Pagi (07:00 WITA)", "Siang (12:00 WITA)", "Malam (20:00 WITA)"]
+    slots = ["Pagi (07:05 WITA)", "Siang (12:05 WITA)", "Malam (20:05 WITA)"]
     current_slot = slots[slot_num]
     next_slot = slots[(slot_num + 1) % 3]
     day_num = ((episode_id - 1) // 3) + 1
 
     fallbacks = [
-        ("Kearifan Falsafah Siriq na Pesse", "Dalam tradisi agung Bugis kuno, manusia dipandu oleh nilai Siriq na Pesse: keteguhan menjaga martabat serta kelembutan merasakan pedih sesama. Bila martabat hilang, sirnalah kemanusiaan. Leluhur Luwu mengajarkan bahwa ksatria sejati tak diukur dari kilau kerisnya, melainkan dari keteguhan janjinya."),
-        ("Hukum Laut Abadi Amanna Gappa", "Jauh sebelum navigasi modern lahir, pelaut Bugis telah melayari samudra Nusantara berbekal piagam hukum laut Amanna Gappa. Piagam ini mengatur sewa muatan, keselamatan awak perahu, dan tata kesopanan di dermaga asing. Laut dipandang bukan sebagai pemisah pulau, melainkan jalan raya kemakmuran."),
-        ("Pappaseng: Pesan Suci Para Leluhur", "Tetua bijak masa lampau mewariskan petuah: Ada empat tiang penegak negeri, yaitu kejujuran para hakim, keberanian para prajurit, kearifan para cendekiawan, dan kerajinan rakyat jelata. Jika salah satu tiang ini patah, goyahlah ketenteraman seluruh jagat."),
-        ("Misteri Pohon Sakral dan Bahtera", "Mitos bahtera Wakka Pasompe menyimpan pesan ekologis luhur: menebang pohon raksasa keramat selalu membawa konsekuensi badai air bah. Nenek moyang mengingatkan agar setiap penaklukan alam senantiasa diiringi ritual permohonan maaf dan penghormatan kepada sang pencipta semesta."),
-        ("Keteguhan Jiwa Pelaut Bugis", "Ketika layar perahu telah terkembang dan kemudi telah terpasang, pantang bagi pelaut Bugis untuk surut ke pantai. Ombak samudra yang menggunung dan badai kelam dihadapi dengan dada tegak. Jiwa bahari inilah yang mengantarkan armada Nusantara mengelilingi dunia.")
+        ("Falsafah Luhur Siriq na Pesse", [
+            f"[KHAZANAH FALSAFAH BUGIS: {theme_name.upper()}]\nDalam tradisi agung Bugis-Makassar kuno, martabat manusia dipandu oleh dua pilar tak terpisahkan: Siriq na Pesse. Siriq adalah rasa malu dan keteguhan menjaga kehormatan diri serta keluarga di hadapan semesta. Tanpa siriq, seorang manusia dianggap kehilangan kemuliaan jiwa penegak kebenaran. (1/4)",
+            "Pilar kedua yang melengkapi ketegasan siriq adalah pesse (atau pacce dalam dialek Makassar). Pesse adalah kelembutan hati yang turut merasakan kepedihan sesama manusia seolah darah sendiri yang teriris. Bila ada warga kaum yang teraniaya atau lapar, seluruh rumpun keluarga ikut menanggung derita yang sama. (2/4)",
+            "Para tetua Luwu dan Bone mengajarkan: ksatria sejati tak diukur dari seberapa banyak musuh yang roboh di ujung kerisnya, melainkan dari seberapa teguh ia memegang sumpah dan melindungi yang lemah. Hukum adat menegaskan bahwa pemimpin yang zalim akan kehilangan tuah berkah tanahnya. (3/4)",
+            f"Falsafah abadi inilah yang membuat masyarakat Bugis-Makassar disegani di seantero maritim Nusantara hingga pelabuhan mancanegara. Keberanian diimbangi keadilan, martabat dibungkus persaudaraan. Simak babak epik kelanjutannya {next_slot}! (4/4)"
+        ]),
+        ("Kearifan Hukum Laut Amanna Gappa", [
+            f"[KHAZANAH SEJARAH MARITIM: {theme_name.upper()}]\nJauh sebelum bangsa Eropa memperkenalkan hukum maritim modern di perairan timur, pelaut ulung Bugis telah memiliki undang-undang navigasi tertulis paling komprehensif di dunia yang dikenal sebagai Piagam Adeq Allopiloping Bicaranna Pabbaluq karya Matowa Amanna Gappa. (1/4)",
+            "Piagam agung yang dirumuskan di Batavia pada abad ke-17 ini mengatur secara rinci hak dan kewajiban juragan perahu, sewa muatan dagang, pembagian keuntungan pelayaran, hingga keselamatan awak kapal yang berlayar dari Malaka, Sumbawa, Maluku, hingga pesisir utara Australia. (2/4)",
+            "Dalam pandangan para pelaut Pinisi, samudra raya bukanlah dinding pemisah kepulauan, melainkan jalan raya kemakmuran bersama yang harus dijaga keamanannya. Setiap perselisihan niaga di atas gelombang diselesaikan melalui musyawarah adat berlandaskan kejujuran dan keadilan mutlak. (3/4)",
+            f"Kekuatan hukum laut inilah yang menjadikan kapal layar Bugis penguasa jalur rempah Nusantara selama berabad-abad. Warisan peradaban ini membuktikan tingginya peradaban bahari nenek moyang kita. Simak kisah petualangan samudra berikutnya {next_slot}! (4/4)"
+        ]),
+        ("Pappaseng: Empat Pilar Kejayaan Negeri", [
+            f"[KHAZANAH KEARIFAN LELUHUR: {theme_name.upper()}]\nDalam naskah lontaraq kuno tersimpan Pappaseng, petuah wasiat suci para cendekiawan dan datu masa silam. Salah satu ajaran paling mendasar menegaskan bahwa tegak dan runtuhnya suatu negeri bersandar pada empat pilar yang saling menopang satu sama lain. (1/4)",
+            "Empat pilar tersebut adalah: pertama, para hakim dan aparat adat yang jujur serta adil dalam menegakkan hukum tanpa pandang bulu. Kedua, para ksatria dan tentara yang gagah berani melindungi tanah air dengan jiwa raga tanpa pamrih pribadi. (2/4)",
+            "Pilar ketiga adalah para cendekiawan dan tetua bijak yang senantiasa memberi nasihat luhur kepada raja tanpa rasa takut. Dan pilar keempat adalah rakyat jelata yang rajin bekerja memakmurkan lumbung padi serta menjaga kebersihan mata air negeri. (3/4)",
+            f"Bila salah satu dari keempat pilar ini retak atau dikhianati oleh ketamakan nafsu, maka azab bencana dan perpecahan akan melanda seluruh jagat. Nilai kepemimpinan universal ini tetap relevan melintasi zaman. Simak lanjutan naskah bersejarah {next_slot}! (4/4)"
+        ]),
+        ("Mitos Bahtera Pasompe dan Pesan Ekologis", [
+            f"[LEGENDA & MISTERI NUSANTARA: {theme_name.upper()}]\nKisah pembuatan bahtera Wakka Pasompe dalam naskah Sureq Galigo bukan sekadar cerita pelayaran asmara Sawerigading, melainkan peringatan kosmis tertua di Nusantara tentang batas hubungan antara keserakahan manusia dan kelestarian alam semesta. (1/4)",
+            "Ketika pohon suci Welenrengnge ditebang untuk dijadikan lambung kapal raksasa, jagat raya seketika murka. Burung garuda raksasa terbang menghempaskan badai, dan telur-telur keramat di puncaknya jatuh menimbulkan banjir bandang air bah yang menenggelamkan perkampungan. (2/4)",
+            "Leluhur Bugis mengajarkan bahwa setiap perusakan alam selalu melahirkan konsekuensi pahit bagi peradaban manusia. Menaklukkan alam tanpa izin ritual, tanpa penghormatan, dan tanpa rasa syukur hanya akan membawa malapetaka bagi keturunan yang hidup setelahnya. (3/4)",
+            f"Pesan ekologis ribuan tahun lalu ini menjadi cermin abadi bagi zaman modern: bahwa manusia dan semesta harus senantiasa hidup dalam harmoni yang seimbang. Simak kelanjutan petualangan epik Sawerigading {next_slot}! (4/4)"
+        ]),
+        ("Sumpah Layar Terkembang Ksatria Samudra", [
+            f"[JIWA BAHARI BUGIS-MAKASSAR: {theme_name.upper()}]\nPepatah luhur pelaut Bugis berbunyi: 'Kualleangi tallanga na toalia', yang bermakna lebih baik tenggelam di palung samudra daripada surut kembali ke pantai tanpa membawa kehormatan dan keberhasilan. Ini bukan sekadar tekad buta, melainkan sumpah tanggung jawab seorang ksatria. (1/4)",
+            "Ketika layar pinisi telah terkembang dan kemudi telah terpasang mantap ke arah bintang penunjuk jalan, tidak ada tempat untuk rasa gentar di dada para kelasi. Gelombang yang menggunung dan badai gelap dihadapi dengan perhitungan matang serta kepasrahan kepada sang penguasa lautan. (2/4)",
+            "Keteguhan mental inilah yang mengantarkan nenek moyang bangsa mengarungi Samudra Hindia hingga Madagaskar dan melintasi Samudra Pasifik berbekal perahu kayu tanpa mesin. Ketahanan fisik ditempa oleh keheningan samudra di bawah gemerlap bintang malam. (3/4)",
+            f"Semangat pantang menyerah ini terus mengalir deras dalam darah generasi penerus hingga hari ini. Menghadapi badai kehidupan dengan dada tegak dan kehormatan suci. Ikuti kisah kepahlawanan maritim selanjutnya {next_slot}! (4/4)"
+        ])
     ]
 
-    chosen_title, chosen_story = fallbacks[(episode_id - 1) % len(fallbacks)]
-    prefix = f"[CATATAN BUDAYA: {theme_name.upper()}]\n" if is_start else ""
-    text = f"{prefix}{chosen_story} Simak kelanjutan kisahnya {next_slot}!"
-    text = clean_and_verify_text(text)
+    chosen_title, chosen_parts = fallbacks[(episode_id - 1) % len(fallbacks)]
+    full_text = "\n\n".join(chosen_parts)
 
-    logger.info(f"[EMERGENCY VAULT] Menggunakan naskah cadangan budaya bermutu untuk Episode {episode_id}")
+    logger.info(f"[EMERGENCY VAULT] Menggunakan naskah Utas cadangan bermutu untuk Episode {episode_id}")
 
     return {
         "id": episode_id,
@@ -295,7 +360,8 @@ def get_emergency_fallback_episode(episode_id: int) -> dict:
         "arc_change": is_start,
         "slot": f"Hari {day_num} - {current_slot}",
         "title": chosen_title,
-        "text": text,
+        "text": full_text,
+        "thread_parts": chosen_parts,
         "image_path": f"images/episode_{episode_id}.jpg",
         "image_raw_url": f"https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_{episode_id}.jpg",
         "image_prompt": "Epic classical Bugis Indonesian heritage oil painting, museum quality 8k"
@@ -304,25 +370,30 @@ def get_emergency_fallback_episode(episode_id: int) -> dict:
 def generate_next_episode_with_gemini(episode_id: int, api_keys_input: str) -> Optional[dict]:
     era_name, theme_name, is_start = get_content_era(episode_id)
     slot_num = ((episode_id - 1) % 3)
-    slots = ["Pagi (07:00 WITA)", "Siang (12:00 WITA)", "Malam (20:00 WITA)"]
+    slots = ["Pagi (07:05 WITA)", "Siang (12:05 WITA)", "Malam (20:05 WITA)"]
     current_slot = slots[slot_num]
     next_slot = slots[(slot_num + 1) % 3]
     day_num = ((episode_id - 1) // 3) + 1
 
-    prompt = f"""Kamu adalah sejarawan ulung, budayawan Bugis-Makassar, dan pencerita mitologi serta sejarah Nusantara berwibawa.
-Tugasmu adalah menyusun naskah Episode {episode_id} untuk serial berkelanjutan di Threads.
+    prompt = f"""Kamu adalah sejarawan ulung, sastrawan Bugis-Makassar, dan novelis mitologi Nusantara berwibawa.
+Tugasmu adalah menyusun naskah bersambung Episode {episode_id} dalam format UTAS / THREAD PANJANG (5 Bagian Bersambung, total cerita sekitar 400 hingga 450 kata / 2.000 hingga 2.400 karakter).
 
 Informasi Konteks:
 - Era Konten: {era_name}
 - Tema / Babak: {theme_name}
 - Slot Tayang: Hari {day_num} - {current_slot}
 
+Struktur Utas (5 Bagian Bersambung):
+1. Bagian 1 (Pembuka): Pembuka narasi megah, suasana kosmis/lingkungan, dan pengantar adegan. (Jika awal babak [{is_start}], awali teks dengan: [MULAI {theme_name.upper()}]). Akhiri dengan tanda (1/5).
+2. Bagian 2 (Konflik/Dinamika): Pertemuan karakter, dialog bermartabat ala bangsawan Bugis, atau ketegangan yang mulai merayap. Akhiri dengan tanda (2/5).
+3. Bagian 3 (Puncak/Aksi): Puncak peristiwa, pertarungan ksatria, pelayaran menembus gelombang, atau keputusan genting. Akhiri dengan tanda (3/5).
+4. Bagian 4 (Dampak & Resonansi): Dampak peristiwa terhadap jagat/kerajaan, serta sentuhan emosional para tokoh. Akhiri dengan tanda (4/5).
+5. Bagian 5 (Falsafah & Pengait): Renungan falsafah luhur leluhur (Siriq na Pesse, Pappaseng) dan kalimat pengait penutup (contoh: Simak kelanjutan kisahnya {next_slot}!). Akhiri dengan tanda (5/5).
+
 Aturan Penulisan Ketat:
-1. Jika ini awal babak baru ({is_start}), awali teks dengan: [MULAI {theme_name.upper()}].
-2. Tulis teks narasi yang berbobot, emosional, dan mendebarkan dengan panjang maksimal 400 karakter (di bawah 450 karakter).
-3. Di kalimat terakhir, berikan kalimat pengait alami untuk mengarahkan pembaca ke episode berikutnya (contoh: Simak kelanjutannya {next_slot}!).
-4. DILARANG menggunakan tanda em-dash (— atau --). Gunakan koma, titik, atau tanda kurung.
-5. Tuliskan deskripsi prompt gambar (image_prompt) bergaya lukisan klasik sejarah Nusantara 8k untuk adegan kisah ini.
+- Setiap bagian HARUS berkisar antara 350 hingga 430 karakter (TIDAK BOLEH melebihi 450 karakter per bagian).
+- DILARANG KERAS menggunakan tanda em-dash (— atau --). Gunakan koma, titik, atau tanda kurung.
+- Bahasa Indonesia sastrawi tinggi berbobot, bebas dari kata klise AI yang dangkal.
 
 Keluarkan HANYA format JSON valid berikut:
 {{
@@ -331,7 +402,13 @@ Keluarkan HANYA format JSON valid berikut:
   "arc_change": {str(is_start).lower()},
   "slot": "Hari {day_num} - {current_slot}",
   "title": "Judul Episode",
-  "text": "Teks narasi di bawah 400 karakter...",
+  "thread_parts": [
+    "Teks Bagian 1 (1/5)...",
+    "Teks Bagian 2 (2/5)...",
+    "Teks Bagian 3 (3/5)...",
+    "Teks Bagian 4 (4/5)...",
+    "Teks Bagian 5 (5/5)..."
+  ],
   "image_prompt": "Epic classical Bugis Indonesian historical art painting of..."
 }}
 """
@@ -348,7 +425,7 @@ Keluarkan HANYA format JSON valid berikut:
         for model in models:
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
             try:
-                logger.info(f"Mencoba Gemini API (Key #{key_idx}, Model: {model}) untuk Episode {episode_id}...")
+                logger.info(f"Mencoba Gemini API (Key #{key_idx}, Model: {model}) untuk Utas Episode {episode_id}...")
                 res = requests.post(url, json=payload, timeout=45)
                 if res.status_code == 429:
                     logger.warning(f"Key #{key_idx} pada model {model} mencapai kuota/rate-limit harian (429). Mencoba alternatif...")
@@ -357,10 +434,17 @@ Keluarkan HANYA format JSON valid berikut:
                 data = res.json()
                 raw_json = data["candidates"][0]["content"]["parts"][0]["text"]
                 parsed = json.loads(raw_json)
-                parsed["text"] = clean_and_verify_text(parsed.get("text", ""))
+                raw_parts = parsed.get("thread_parts", [])
+                if isinstance(raw_parts, list) and raw_parts:
+                    parsed["thread_parts"] = [clean_and_verify_text(p) for p in raw_parts if p.strip()]
+                    parsed["text"] = "\n\n".join(parsed["thread_parts"])
+                else:
+                    parsed["text"] = clean_and_verify_text(parsed.get("text", ""))
+                    parsed["thread_parts"] = [parsed["text"]]
+
                 parsed["image_path"] = f"images/episode_{episode_id}.jpg"
                 parsed["image_raw_url"] = f"https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_{episode_id}.jpg"
-                logger.info(f"Sukses menghasilkan Episode {episode_id} via Gemini {model}!")
+                logger.info(f"Sukses menghasilkan Utas Episode {episode_id} ({len(parsed['thread_parts'])} bagian) via Gemini {model}!")
                 return parsed
             except Exception as e:
                 logger.warning(f"Percobaan dengan {model} gagal: {e}")
@@ -437,22 +521,32 @@ def main():
     slot = current_episode.get("slot", "")
     arc = current_episode.get("arc", "")
     is_arc_change = current_episode.get("arc_change", False)
-    text = clean_and_verify_text(current_episode.get("text", ""))
+    raw_thread_parts = current_episode.get("thread_parts")
+    if isinstance(raw_thread_parts, list) and raw_thread_parts:
+        thread_parts = [clean_and_verify_text(p) for p in raw_thread_parts if p.strip()]
+    else:
+        # Fallback jika hanya ada naskah tunggal
+        single_text = clean_and_verify_text(current_episode.get("text", ""))
+        thread_parts = [single_text]
+
     image_url = current_episode.get("image_raw_url")
     local_image = os.path.join(BASE_DIR, current_episode.get("image_path", ""))
 
     if is_arc_change:
         logger.info(f"[PERGANTIAN BABAK / ARC] Memulai babak baru: {arc}")
 
+    total_words = sum(len(p.split()) for p in thread_parts)
+    total_chars = sum(len(p) for p in thread_parts)
     logger.info(f"Arc / Babak: {arc}")
     logger.info(f"Slot: {slot}")
     logger.info(f"Judul: {title}")
-    logger.info(f"Panjang Teks: {len(text)} karakter (Batas Threads: 500, Batas Bot: 450)")
-    logger.info(f"Teks: {text}")
+    logger.info(f"Format Tayang: Utas / Thread ({len(thread_parts)} bagian bersambung, total {total_words} kata, {total_chars} karakter)")
+    for i, p in enumerate(thread_parts, 1):
+        logger.info(f"  - Bagian {i}/{len(thread_parts)} ({len(p)} char): {p[:90]}...")
     logger.info(f"Gambar URL: {image_url}")
     logger.info(f"Berkas Gambar Lokal Ada: {os.path.exists(local_image)}")
 
-    # Eksekusi Human Jitter 0-9 menit
+    # Eksekusi Human Jitter 10-60 detik
     apply_human_jitter(skip=args.no_jitter)
 
     threads_user_id = os.getenv("THREADS_USER_ID", "").strip()
@@ -481,21 +575,17 @@ def main():
     poster = ThreadsPoster(user_id=threads_user_id, access_token=threads_token, dry_run=dry_run)
     valid_image_url = get_public_image_url(current_episode.get("image_path", ""))
     if not valid_image_url:
-        logger.info("Gambar lokal belum tersedia, memposting dengan format teks murni.")
+        logger.info("Gambar lokal belum tersedia, memposting utas dengan format teks murni.")
     else:
-        logger.info("URL gambar siap dikirimkan ke Meta Threads.")
+        logger.info("URL gambar siap dikirimkan bersama postingan utama Utas.")
 
-    container_id = poster.create_media_container(text=text, image_url=valid_image_url)
-    if not container_id:
-        logger.error("Gagal membuat container postingan.")
+    published_ids = poster.publish_thread(parts=thread_parts, image_url=valid_image_url)
+    if not published_ids:
+        logger.error("Gagal mempublikasikan Utas postingan ke Threads.")
         sys.exit(1)
 
-    post_id = poster.publish_container(container_id)
-    if not post_id:
-        logger.error("Gagal mempublikasikan postingan.")
-        sys.exit(1)
-
-    logger.info(f"Sukses mempublikasikan Episode {target_id} ke Threads! (ID: {post_id})")
+    root_post_id = published_ids[0]
+    logger.info(f"Sukses mempublikasikan Utas Episode {target_id} ({len(published_ids)} bagian) ke Threads! (Root ID: {root_post_id})")
 
     # Perbarui urutan ke episode selanjutnya (hanya disimpan bila posting nyata)
     if not dry_run:
@@ -506,7 +596,9 @@ def main():
             "title": title,
             "arc": arc,
             "slot": slot,
-            "post_id": post_id,
+            "post_id": root_post_id,
+            "thread_ids": published_ids,
+            "parts_count": len(published_ids),
             "posted_at": state["last_posted_at"],
             "image_url": valid_image_url,
             "mode": "live"
@@ -514,7 +606,7 @@ def main():
         save_state(state)
         logger.info(f"Episode berikutnya yang dijadwalkan: Episode {state['current_episode_id']}")
     else:
-        logger.info(f"[DRY-RUN] Simulasi penayangan Episode {target_id} berhasil. state.json tidak diubah.")
+        logger.info(f"[DRY-RUN] Simulasi penayangan Utas Episode {target_id} berhasil. state.json tidak diubah.")
 
 if __name__ == "__main__":
     main()
