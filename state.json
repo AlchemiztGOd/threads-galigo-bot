@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 3,
-  "last_posted_at": "2026-09-28T10:14:42.876900+00:00",
+  "current_episode_id": 4,
+  "last_posted_at": "2026-09-28T19:24:46.849843+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -20,6 +20,24 @@
       "post_id": "18334132003277560",
       "posted_at": "2026-09-28T10:14:42.876900+00:00",
       "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_2.jpg",
+      "mode": "live"
+    },
+    {
+      "episode_id": 3,
+      "title": "Kemunculan Putri Samudra We Nyiliq Timo",
+      "arc": "Arc 1: Asal-Usul Dewata dan Berdirinya Luwu",
+      "slot": "Hari 1 - Malam (20:05 WITA)",
+      "post_id": "18068851154769720",
+      "thread_ids": [
+        "18068851154769720",
+        "17980263567090134",
+        "18120351698292350",
+        "18071803901731798",
+        "18089257610217949"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-09-28T19:24:46.849843+00:00",
+      "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_3.jpg",
       "mode": "live"
     }
   ],
