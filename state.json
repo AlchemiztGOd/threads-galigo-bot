@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 2,
-  "last_posted_at": "2026-09-28T01:27:08.516619+00:00",
+  "current_episode_id": 3,
+  "last_posted_at": "2026-09-28T10:14:42.876900+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -10,6 +10,16 @@
       "post_id": "17962154850207315",
       "posted_at": "2026-09-28T01:27:08.516619+00:00",
       "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_1.jpg",
+      "mode": "live"
+    },
+    {
+      "episode_id": 2,
+      "title": "Turunnya Batara Guru ke Bumi",
+      "arc": "Arc 1: Asal-Usul Dewata dan Berdirinya Luwu",
+      "slot": "Hari 1 - Siang (12:00 WITA)",
+      "post_id": "18334132003277560",
+      "posted_at": "2026-09-28T10:14:42.876900+00:00",
+      "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_2.jpg",
       "mode": "live"
     }
   ],
