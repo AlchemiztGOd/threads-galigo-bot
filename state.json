@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 4,
-  "last_posted_at": "2026-09-28T19:24:46.849843+00:00",
+  "current_episode_id": 5,
+  "last_posted_at": "2026-09-29T02:31:27.470124+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -38,6 +38,20 @@
       "parts_count": 5,
       "posted_at": "2026-09-28T19:24:46.849843+00:00",
       "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_3.jpg",
+      "mode": "live"
+    },
+    {
+      "episode_id": 4,
+      "title": "Pernikahan Suci dan Berdirinya Kedatuan Luwu",
+      "arc": "Arc 1: Asal-Usul Dewata dan Berdirinya Luwu",
+      "slot": "Hari 2 - Pagi (07:00 WITA)",
+      "post_id": "17909012913307018",
+      "thread_ids": [
+        "17909012913307018"
+      ],
+      "parts_count": 1,
+      "posted_at": "2026-09-29T02:31:27.470124+00:00",
+      "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_4.jpg",
       "mode": "live"
     }
   ],
