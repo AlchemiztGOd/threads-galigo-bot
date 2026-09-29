@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 5,
-  "last_posted_at": "2026-09-29T02:31:27.470124+00:00",
+  "current_episode_id": 6,
+  "last_posted_at": "2026-09-29T10:29:02.077820+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -52,6 +52,20 @@
       "parts_count": 1,
       "posted_at": "2026-09-29T02:31:27.470124+00:00",
       "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_4.jpg",
+      "mode": "live"
+    },
+    {
+      "episode_id": 5,
+      "title": "Lahirnya Kembar Emas yang Mengguncang Jagat",
+      "arc": "Arc 2: Kutukan Kembar Emas dan Takdir Terlarang",
+      "slot": "Hari 2 - Siang (12:00 WITA)",
+      "post_id": "18131542423664476",
+      "thread_ids": [
+        "18131542423664476"
+      ],
+      "parts_count": 1,
+      "posted_at": "2026-09-29T10:29:02.077820+00:00",
+      "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_5.jpg",
       "mode": "live"
     }
   ],
