@@ -522,12 +522,32 @@ def main():
     arc = current_episode.get("arc", "")
     is_arc_change = current_episode.get("arc_change", False)
     raw_thread_parts = current_episode.get("thread_parts")
-    if isinstance(raw_thread_parts, list) and raw_thread_parts:
+    if isinstance(raw_thread_parts, list) and len(raw_thread_parts) > 1:
         thread_parts = [clean_and_verify_text(p) for p in raw_thread_parts if p.strip()]
     else:
-        # Fallback jika hanya ada naskah tunggal
-        single_text = clean_and_verify_text(current_episode.get("text", ""))
-        thread_parts = [single_text]
+        # Jika thread_parts belum lengkap (hanya teks pendek), lakukan ekspansi otomatis ke Utas 5 bagian!
+        gemini_key = os.getenv("GEMINI_API_KEY")
+        if gemini_key:
+            logger.info(f"Episode {target_id} belum memiliki Utas lengkap. Menjalankan ekspansi otomatis via Gemini API...")
+            expanded = generate_next_episode_with_gemini(target_id, gemini_key)
+            if expanded and expanded.get("thread_parts") and len(expanded.get("thread_parts")) > 1:
+                current_episode = expanded
+                thread_parts = expanded["thread_parts"]
+                title = current_episode.get("title", title)
+                # Perbarui episodes.json agar tidak perlu memanggil ulang di masa depan
+                for idx_ep, ep_item in enumerate(episodes):
+                    if ep_item.get("id") == target_id:
+                        episodes[idx_ep] = expanded
+                        break
+                else:
+                    episodes.append(expanded)
+                save_episodes(episodes)
+            else:
+                fallback_ep = get_emergency_fallback_episode(target_id)
+                thread_parts = fallback_ep.get("thread_parts", [clean_and_verify_text(current_episode.get("text", ""))])
+        else:
+            fallback_ep = get_emergency_fallback_episode(target_id)
+            thread_parts = fallback_ep.get("thread_parts", [clean_and_verify_text(current_episode.get("text", ""))])
 
     image_url = current_episode.get("image_raw_url")
     local_image = os.path.join(BASE_DIR, current_episode.get("image_path", ""))
