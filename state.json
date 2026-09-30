@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 10,
-  "last_posted_at": "2026-09-30T12:47:54.762492+00:00",
+  "current_episode_id": 11,
+  "last_posted_at": "2026-09-30T17:46:40.794277+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -126,6 +126,24 @@
       "parts_count": 5,
       "posted_at": "2026-09-30T12:47:54.762492+00:00",
       "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_9.jpg",
+      "mode": "live"
+    },
+    {
+      "episode_id": 10,
+      "title": "Penebangan Pohon Keramat Welenrengnge",
+      "arc": "Arc 3: Penebangan Pohon Keramat dan Bahtera Maut",
+      "slot": "Hari 4 - Pagi (07:00 WITA)",
+      "post_id": "17969884245172753",
+      "thread_ids": [
+        "17969884245172753",
+        "18030715316912818",
+        "17936536743123443",
+        "18123490579923678",
+        "18600618748064930"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-09-30T17:46:40.794277+00:00",
+      "image_url": null,
       "mode": "live"
     }
   ],
