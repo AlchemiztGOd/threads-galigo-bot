@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 7,
-  "last_posted_at": "2026-09-29T17:49:30.006967+00:00",
+  "current_episode_id": 8,
+  "last_posted_at": "2026-09-30T01:53:44.588536+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -80,6 +80,20 @@
       "parts_count": 1,
       "posted_at": "2026-09-29T17:49:30.006967+00:00",
       "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_6.jpg",
+      "mode": "live"
+    },
+    {
+      "episode_id": 7,
+      "title": "Pemisahan Kembar Emas Sejak Buana",
+      "arc": "Arc 2: Kutukan Kembar Emas dan Takdir Terlarang",
+      "slot": "Hari 3 - Pagi (07:00 WITA)",
+      "post_id": "18018129467928735",
+      "thread_ids": [
+        "18018129467928735"
+      ],
+      "parts_count": 1,
+      "posted_at": "2026-09-30T01:53:44.588536+00:00",
+      "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_7.jpg",
       "mode": "live"
     }
   ],
