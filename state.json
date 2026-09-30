@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 9,
-  "last_posted_at": "2026-09-30T10:21:13.019483+00:00",
+  "current_episode_id": 10,
+  "last_posted_at": "2026-09-30T12:47:54.762492+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -108,6 +108,24 @@
       "parts_count": 1,
       "posted_at": "2026-09-30T10:21:13.019483+00:00",
       "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_8.jpg",
+      "mode": "live"
+    },
+    {
+      "episode_id": 9,
+      "title": "Siasat Cerdik We Tenriabeng",
+      "arc": "Arc 3: Penebangan Pohon Keramat dan Bahtera Maut",
+      "slot": "Hari 3 - Malam (20:00 WITA)",
+      "post_id": "18096316646394468",
+      "thread_ids": [
+        "18096316646394468",
+        "18052776329589955",
+        "18033481136845181",
+        "18143045557592564",
+        "18122462242902756"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-09-30T12:47:54.762492+00:00",
+      "image_url": "https://raw.githubusercontent.com/AlchemiztGOd/threads-galigo-bot/main/images/episode_9.jpg",
       "mode": "live"
     }
   ],
