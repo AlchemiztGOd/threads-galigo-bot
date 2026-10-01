@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 12,
-  "last_posted_at": "2026-09-30T23:02:23.542365+00:00",
+  "current_episode_id": 13,
+  "last_posted_at": "2026-10-01T01:52:15.975785+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -161,6 +161,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-09-30T23:02:23.542365+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 12,
+      "title": "Mahakarya Bahtera Wakka Pasompe",
+      "arc": "Arc 3: Penebangan Pohon Keramat dan Bahtera Maut",
+      "slot": "Hari 4 - Malam (20:00 WITA)",
+      "post_id": "18025671995860167",
+      "thread_ids": [
+        "18025671995860167",
+        "18166006186478465",
+        "18094222019670804",
+        "17912130882521418",
+        "17909920806518682"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-01T01:52:15.975785+00:00",
       "image_url": null,
       "mode": "live"
     }
