@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 17,
-  "last_posted_at": "2026-10-01T18:12:10.899595+00:00",
+  "current_episode_id": 18,
+  "last_posted_at": "2026-10-01T23:02:19.036658+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -251,6 +251,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-01T18:12:10.899595+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 17,
+      "title": "Pernikahan Agung dan Lahirnya I La Galigo",
+      "arc": "Arc 4: Samudra Berdarah dan Penaklukan Tana Kelling",
+      "slot": "Hari 6 - Siang (12:00 WITA)",
+      "post_id": "18227369767333911",
+      "thread_ids": [
+        "18227369767333911",
+        "18117714388989590",
+        "18130950763801661",
+        "18115418195101962",
+        "18155163844543117"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-01T23:02:19.036658+00:00",
       "image_url": null,
       "mode": "live"
     }
