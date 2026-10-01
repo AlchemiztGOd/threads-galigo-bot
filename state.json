@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 16,
-  "last_posted_at": "2026-10-01T12:02:29.535770+00:00",
+  "current_episode_id": 17,
+  "last_posted_at": "2026-10-01T18:12:10.899595+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -233,6 +233,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-01T12:02:29.535770+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 16,
+      "title": "Pertempuran Sengit Meluluhkan Hati We Cudai",
+      "arc": "Arc 4: Samudra Berdarah dan Penaklukan Tana Kelling",
+      "slot": "Hari 6 - Pagi (07:00 WITA)",
+      "post_id": "18090888797682857",
+      "thread_ids": [
+        "18090888797682857",
+        "17990459913058668",
+        "17949063060057073",
+        "18111411347126462",
+        "18110180801142653"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-01T18:12:10.899595+00:00",
       "image_url": null,
       "mode": "live"
     }
