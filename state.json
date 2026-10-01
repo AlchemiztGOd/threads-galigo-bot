@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 15,
-  "last_posted_at": "2026-10-01T10:48:17.464010+00:00",
+  "current_episode_id": 16,
+  "last_posted_at": "2026-10-01T12:02:29.535770+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -215,6 +215,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-01T10:48:17.464010+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 15,
+      "title": "Panji Luwu Berkibar di Pantai Kelling",
+      "arc": "Arc 4: Samudra Berdarah dan Penaklukan Tana Kelling",
+      "slot": "Hari 5 - Malam (20:00 WITA)",
+      "post_id": "18114206807024607",
+      "thread_ids": [
+        "18114206807024607",
+        "18057859280798248",
+        "18111246725131334",
+        "17975332656130643",
+        "18163557394497346"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-01T12:02:29.535770+00:00",
       "image_url": null,
       "mode": "live"
     }
