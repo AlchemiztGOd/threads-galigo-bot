@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 14,
-  "last_posted_at": "2026-10-01T04:02:19.048738+00:00",
+  "current_episode_id": 15,
+  "last_posted_at": "2026-10-01T10:48:17.464010+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -197,6 +197,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-01T04:02:19.048738+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 14,
+      "title": "Menerjang Badai Beracun dan Monster Samudra",
+      "arc": "Arc 4: Samudra Berdarah dan Penaklukan Tana Kelling",
+      "slot": "Hari 5 - Siang (12:00 WITA)",
+      "post_id": "18159668878439984",
+      "thread_ids": [
+        "18159668878439984",
+        "17948950299326607",
+        "18077503865713381",
+        "18185731936414604",
+        "18107275579926754"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-01T10:48:17.464010+00:00",
       "image_url": null,
       "mode": "live"
     }
