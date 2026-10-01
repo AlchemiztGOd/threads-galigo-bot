@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 13,
-  "last_posted_at": "2026-10-01T01:52:15.975785+00:00",
+  "current_episode_id": 14,
+  "last_posted_at": "2026-10-01T04:02:19.048738+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -179,6 +179,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-01T01:52:15.975785+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 13,
+      "title": "Sumpah Keramat dan Sauh Diangkat",
+      "arc": "Arc 3: Penebangan Pohon Keramat dan Bahtera Maut",
+      "slot": "Hari 5 - Pagi (07:00 WITA)",
+      "post_id": "17906496786563236",
+      "thread_ids": [
+        "17906496786563236",
+        "18066505757602572",
+        "17936369334128579",
+        "18112959502975837",
+        "17904923991577387"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-01T04:02:19.048738+00:00",
       "image_url": null,
       "mode": "live"
     }
