@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 18,
-  "last_posted_at": "2026-10-01T23:02:19.036658+00:00",
+  "current_episode_id": 19,
+  "last_posted_at": "2026-10-02T02:04:39.785063+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -269,6 +269,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-01T23:02:19.036658+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 18,
+      "title": "Jiwa Pemberontak I La Galigo",
+      "arc": "Arc 5: Petualangan Liar Sang Pewaris I La Galigo",
+      "slot": "Hari 6 - Malam (20:00 WITA)",
+      "post_id": "18111550676137669",
+      "thread_ids": [
+        "18111550676137669",
+        "18139105672616541",
+        "17910691041498957",
+        "17904168360566718",
+        "18019372832941137"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-02T02:04:39.785063+00:00",
       "image_url": null,
       "mode": "live"
     }
