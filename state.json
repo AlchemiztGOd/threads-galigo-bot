@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 20,
-  "last_posted_at": "2026-10-02T04:02:26.946777+00:00",
+  "current_episode_id": 21,
+  "last_posted_at": "2026-10-02T10:22:59.483924+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -305,6 +305,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-02T04:02:26.946777+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 20,
+      "title": "Pengembaraan Asmara Menjelajah Nusantara",
+      "arc": "Arc 5: Petualangan Liar Sang Pewaris I La Galigo",
+      "slot": "Hari 7 - Siang (12:00 WITA)",
+      "post_id": "18201560197372549",
+      "thread_ids": [
+        "18201560197372549",
+        "17921884626434502",
+        "18126421178485724",
+        "18093029933163288",
+        "18138514525536423"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-02T10:22:59.483924+00:00",
       "image_url": null,
       "mode": "live"
     }
