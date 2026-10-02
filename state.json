@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 19,
-  "last_posted_at": "2026-10-02T02:04:39.785063+00:00",
+  "current_episode_id": 20,
+  "last_posted_at": "2026-10-02T04:02:26.946777+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -287,6 +287,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-02T02:04:39.785063+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 19,
+      "title": "Sabung Ayam Legendaris di Sunra dan Wajo",
+      "arc": "Arc 5: Petualangan Liar Sang Pewaris I La Galigo",
+      "slot": "Hari 7 - Pagi (07:00 WITA)",
+      "post_id": "18144870943562310",
+      "thread_ids": [
+        "18144870943562310",
+        "17886195162620876",
+        "18124339559478658",
+        "17901376794376103",
+        "17992047129060628"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-02T04:02:26.946777+00:00",
       "image_url": null,
       "mode": "live"
     }
