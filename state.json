@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 21,
-  "last_posted_at": "2026-10-02T10:22:59.483924+00:00",
+  "current_episode_id": 22,
+  "last_posted_at": "2026-10-02T12:02:17.208349+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -323,6 +323,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-02T10:22:59.483924+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 21,
+      "title": "Lahirnya La Tenritatta sang Penyeimbang",
+      "arc": "Arc 5: Petualangan Liar Sang Pewaris I La Galigo",
+      "slot": "Hari 7 - Malam (20:00 WITA)",
+      "post_id": "18626529331050730",
+      "thread_ids": [
+        "18626529331050730",
+        "17899348374387136",
+        "18105660155206250",
+        "17917637940449716",
+        "18114250409130064"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-02T12:02:17.208349+00:00",
       "image_url": null,
       "mode": "live"
     }
