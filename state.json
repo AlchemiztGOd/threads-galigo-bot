@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 24,
-  "last_posted_at": "2026-10-02T23:02:17.662555+00:00",
+  "current_episode_id": 25,
+  "last_posted_at": "2026-10-03T01:48:53.863647+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -377,6 +377,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-02T23:02:17.662555+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 24,
+      "title": "Gelombang Dahsyat Murka Kosmis",
+      "arc": "Arc 6: Perjalanan Terakhir dan Tenggelamnya Bahtera",
+      "slot": "Hari 8 - Malam (20:00 WITA)",
+      "post_id": "18382491241225830",
+      "thread_ids": [
+        "18382491241225830",
+        "18561082246079661",
+        "18152498173480008",
+        "18051414962813419",
+        "18369087736213761"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-03T01:48:53.863647+00:00",
       "image_url": null,
       "mode": "live"
     }
