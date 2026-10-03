@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 27,
-  "last_posted_at": "2026-10-03T09:45:13.367119+00:00",
+  "current_episode_id": 28,
+  "last_posted_at": "2026-10-03T12:02:17.247744+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -431,6 +431,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-03T09:45:13.367119+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 27,
+      "title": "Penobatan La Tenritatta Memimpin Manusia Bumi",
+      "arc": "Arc 7: Kembalinya Para Dewata dan Penutupan Epos",
+      "slot": "Hari 9 - Malam (20:00 WITA)",
+      "post_id": "18145306312560959",
+      "thread_ids": [
+        "18145306312560959",
+        "18032688350849751",
+        "17985666939090064",
+        "18141913627610905",
+        "17951842062328994"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-03T12:02:17.247744+00:00",
       "image_url": null,
       "mode": "live"
     }
