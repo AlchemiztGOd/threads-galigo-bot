@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 28,
-  "last_posted_at": "2026-10-03T12:02:17.247744+00:00",
+  "current_episode_id": 29,
+  "last_posted_at": "2026-10-03T15:54:26.460145+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -449,6 +449,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-03T12:02:17.247744+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 28,
+      "title": "Pamitnya Dewata dan Mahakarya Abadi Lontar",
+      "arc": "Arc 7: Kembalinya Para Dewata dan Penutupan Epos",
+      "slot": "Hari 10 - Pagi (07:00 WITA)",
+      "post_id": "18116925211806783",
+      "thread_ids": [
+        "18116925211806783",
+        "18386656297228095",
+        "18448268563124648",
+        "17999246307009188",
+        "18022269707866427"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-03T15:54:26.460145+00:00",
       "image_url": null,
       "mode": "live"
     }
