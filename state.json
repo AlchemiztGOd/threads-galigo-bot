@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 26,
-  "last_posted_at": "2026-10-03T04:02:47.722630+00:00",
+  "current_episode_id": 27,
+  "last_posted_at": "2026-10-03T09:45:13.367119+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -413,6 +413,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-03T04:02:47.722630+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 26,
+      "title": "Takhta Abadi di Puncak Langit dan Dasar Laut",
+      "arc": "Arc 7: Kembalinya Para Dewata dan Penutupan Epos",
+      "slot": "Hari 9 - Siang (12:00 WITA)",
+      "post_id": "17924656722203170",
+      "thread_ids": [
+        "17924656722203170",
+        "18109882709597267",
+        "18110823779334174",
+        "17892648138614426",
+        "17937127680381936"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-03T09:45:13.367119+00:00",
       "image_url": null,
       "mode": "live"
     }
