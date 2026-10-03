@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 25,
-  "last_posted_at": "2026-10-03T01:48:53.863647+00:00",
+  "current_episode_id": 26,
+  "last_posted_at": "2026-10-03T04:02:47.722630+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -395,6 +395,24 @@
       ],
       "parts_count": 5,
       "posted_at": "2026-10-03T01:48:53.863647+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 25,
+      "title": "Tenggelamnya Wakka Pasompe ke Dasar Uriq Liu",
+      "arc": "Arc 6: Perjalanan Terakhir dan Tenggelamnya Bahtera",
+      "slot": "Hari 9 - Pagi (07:00 WITA)",
+      "post_id": "18072015491572155",
+      "thread_ids": [
+        "18072015491572155",
+        "17985900659888851",
+        "17988744117060368",
+        "17997534602825672",
+        "17869935828648672"
+      ],
+      "parts_count": 5,
+      "posted_at": "2026-10-03T04:02:47.722630+00:00",
       "image_url": null,
       "mode": "live"
     }
