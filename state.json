@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 36,
-  "last_posted_at": "2026-10-05T01:43:53.787646+00:00",
+  "current_episode_id": 37,
+  "last_posted_at": "2026-10-05T11:16:16.285386+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -586,6 +586,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-05T01:43:53.787646+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 36,
+      "title": "Falsafah Luhur Siriq na Pesse",
+      "arc": "Jilid 2: Masa Keemasan Batara Lattuq dan Kelahiran Kembar Emas",
+      "slot": "Hari 12 - Malam (20:05 WITA)",
+      "post_id": "18138671740527508",
+      "thread_ids": [
+        "18138671740527508",
+        "18105844190211146",
+        "18111186683519472",
+        "18081671213373148"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-05T11:16:16.285386+00:00",
       "image_url": null,
       "mode": "live"
     }
