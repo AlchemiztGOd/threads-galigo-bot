@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 37,
-  "last_posted_at": "2026-10-05T11:16:16.285386+00:00",
+  "current_episode_id": 38,
+  "last_posted_at": "2026-10-05T20:26:31.516250+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -603,6 +603,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-05T11:16:16.285386+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 37,
+      "title": "Kearifan Hukum Laut Amanna Gappa",
+      "arc": "Jilid 2: Masa Keemasan Batara Lattuq dan Kelahiran Kembar Emas",
+      "slot": "Hari 13 - Pagi (07:05 WITA)",
+      "post_id": "18136694992634747",
+      "thread_ids": [
+        "18136694992634747",
+        "18179345155439039",
+        "18026285825699886",
+        "18117212726063700"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-05T20:26:31.516250+00:00",
       "image_url": null,
       "mode": "live"
     }
