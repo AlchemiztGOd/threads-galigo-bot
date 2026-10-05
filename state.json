@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 35,
-  "last_posted_at": "2026-10-04T16:37:46.447647+00:00",
+  "current_episode_id": 36,
+  "last_posted_at": "2026-10-05T01:43:53.787646+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -571,8 +571,25 @@
       "posted_at": "2026-10-04T16:37:46.447647+00:00",
       "image_url": null,
       "mode": "live"
+    },
+    {
+      "episode_id": 35,
+      "title": "Sumpah Layar Terkembang Ksatria Samudra",
+      "arc": "Jilid 2: Masa Keemasan Batara Lattuq dan Kelahiran Kembar Emas",
+      "slot": "Hari 12 - Siang (12:05 WITA)",
+      "post_id": "18126855787850690",
+      "thread_ids": [
+        "18126855787850690",
+        "18061926416530343",
+        "17885316759501831",
+        "18090704840220450"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-05T01:43:53.787646+00:00",
+      "image_url": null,
+      "mode": "live"
     }
   ],
-  "threads_access_token": "THAAZCZBL8nQUDdBYmFCMjFUM21uaHJJeENWcC1BV2pfSGlXQUtRd1FsOUVfV1ZAWMDdEZAkZAobWlydkNJMXJsVkhVMHhETXVZASnFkLVN0TXY5UDM4YXdMeDY2cGJWV2w3eWxhZAm1iUURqZAUxWeUlncnM3ZAjhjU1h3aWJNYjBSdFpTUjlrQQZDZD",
-  "token_last_refreshed_at": "2026-09-28T01:26:34.417561+00:00"
+  "threads_access_token": "THAAZCZBL8nQUDdBYlk0ZA0JhZAF9vd3NNY3FLVUUwaTRHYVFYemFMWDJmM201d2NpaXhxN2NrbzVPV0ptNjFjRnhVdHVjYldhLVcxbE5ud0szUHUwS2NaZA3VmMmRYamYwVjZAIeE50SVV2V2R0bUU4LUtIT3R4aFNGYlQ4ZAldkSU4yQllkQQZDZD",
+  "token_last_refreshed_at": "2026-10-05T01:42:08.478485+00:00"
 }
