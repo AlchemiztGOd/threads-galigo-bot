@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 39,
-  "last_posted_at": "2026-10-06T02:45:55.996309+00:00",
+  "current_episode_id": 40,
+  "last_posted_at": "2026-10-06T11:06:36.459835+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -637,6 +637,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-06T02:45:55.996309+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 39,
+      "title": "Mitos Bahtera Pasompe dan Pesan Ekologis",
+      "arc": "Jilid 2: Masa Keemasan Batara Lattuq dan Kelahiran Kembar Emas",
+      "slot": "Hari 13 - Malam (20:05 WITA)",
+      "post_id": "18104013728110218",
+      "thread_ids": [
+        "18104013728110218",
+        "17957931579257156",
+        "18139577368615609",
+        "18104546897205797"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-06T11:06:36.459835+00:00",
       "image_url": null,
       "mode": "live"
     }
