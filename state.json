@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 38,
-  "last_posted_at": "2026-10-05T20:26:31.516250+00:00",
+  "current_episode_id": 39,
+  "last_posted_at": "2026-10-06T02:45:55.996309+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -620,6 +620,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-05T20:26:31.516250+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 38,
+      "title": "Pappaseng: Empat Pilar Kejayaan Negeri",
+      "arc": "Jilid 2: Masa Keemasan Batara Lattuq dan Kelahiran Kembar Emas",
+      "slot": "Hari 13 - Siang (12:05 WITA)",
+      "post_id": "18197019130388005",
+      "thread_ids": [
+        "18197019130388005",
+        "18061875272546213",
+        "18092865947181699",
+        "18095407088420787"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-06T02:45:55.996309+00:00",
       "image_url": null,
       "mode": "live"
     }
