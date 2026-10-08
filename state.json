@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 45,
-  "last_posted_at": "2026-10-08T02:37:20.507106+00:00",
+  "current_episode_id": 46,
+  "last_posted_at": "2026-10-08T11:12:56.998995+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -739,6 +739,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-08T02:37:20.507106+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 45,
+      "title": "Sumpah Layar Terkembang Ksatria Samudra",
+      "arc": "Jilid 2: Masa Keemasan Batara Lattuq dan Kelahiran Kembar Emas",
+      "slot": "Hari 15 - Malam (20:05 WITA)",
+      "post_id": "18051810548600710",
+      "thread_ids": [
+        "18051810548600710",
+        "18076251494457347",
+        "18070772981499523",
+        "18098103611419364"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-08T11:12:56.998995+00:00",
       "image_url": null,
       "mode": "live"
     }
