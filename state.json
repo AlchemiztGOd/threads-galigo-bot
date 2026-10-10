@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 51,
-  "last_posted_at": "2026-10-10T02:11:08.971698+00:00",
+  "current_episode_id": 52,
+  "last_posted_at": "2026-10-10T10:28:53.964115+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -841,6 +841,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-10T02:11:08.971698+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 51,
+      "title": "Falsafah Luhur Siriq na Pesse",
+      "arc": "Jilid 3: Masa Remaja Sawerigading dan Pendidikan Ksatria",
+      "slot": "Hari 17 - Malam (20:05 WITA)",
+      "post_id": "18106733285346749",
+      "thread_ids": [
+        "18106733285346749",
+        "18071726780591720",
+        "18191031373401412",
+        "18107621738237490"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-10T10:28:53.964115+00:00",
       "image_url": null,
       "mode": "live"
     }
