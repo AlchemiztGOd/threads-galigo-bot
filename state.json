@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 53,
-  "last_posted_at": "2026-10-10T17:06:12.795703+00:00",
+  "current_episode_id": 54,
+  "last_posted_at": "2026-10-11T01:38:16.482159+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -875,6 +875,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-10T17:06:12.795703+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 53,
+      "title": "Pappaseng: Empat Pilar Kejayaan Negeri",
+      "arc": "Jilid 3: Masa Remaja Sawerigading dan Pendidikan Ksatria",
+      "slot": "Hari 18 - Siang (12:05 WITA)",
+      "post_id": "17962234344215354",
+      "thread_ids": [
+        "17962234344215354",
+        "17958690498249108",
+        "17938753956383678",
+        "18132951763775950"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-11T01:38:16.482159+00:00",
       "image_url": null,
       "mode": "live"
     }
