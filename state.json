@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 57,
-  "last_posted_at": "2026-10-12T02:10:40.434350+00:00",
+  "current_episode_id": 58,
+  "last_posted_at": "2026-10-12T11:45:32.012940+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -943,6 +943,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-12T02:10:40.434350+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 57,
+      "title": "Kearifan Hukum Laut Amanna Gappa",
+      "arc": "Jilid 3: Masa Remaja Sawerigading dan Pendidikan Ksatria",
+      "slot": "Hari 19 - Malam (20:05 WITA)",
+      "post_id": "17962699881247583",
+      "thread_ids": [
+        "17962699881247583",
+        "18112599940878284",
+        "18106254281462509",
+        "17945962467346961"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-12T11:45:32.012940+00:00",
       "image_url": null,
       "mode": "live"
     }
