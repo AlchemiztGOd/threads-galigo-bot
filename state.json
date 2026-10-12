@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 56,
-  "last_posted_at": "2026-10-11T17:30:17.535176+00:00",
+  "current_episode_id": 57,
+  "last_posted_at": "2026-10-12T02:10:40.434350+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -928,8 +928,25 @@
       "posted_at": "2026-10-11T17:30:17.535176+00:00",
       "image_url": null,
       "mode": "live"
+    },
+    {
+      "episode_id": 56,
+      "title": "Falsafah Luhur Siriq na Pesse",
+      "arc": "Jilid 3: Masa Remaja Sawerigading dan Pendidikan Ksatria",
+      "slot": "Hari 19 - Siang (12:05 WITA)",
+      "post_id": "17974589592149736",
+      "thread_ids": [
+        "17974589592149736",
+        "18002168300804453",
+        "18235593286323523",
+        "18117311920796509"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-12T02:10:40.434350+00:00",
+      "image_url": null,
+      "mode": "live"
     }
   ],
-  "threads_access_token": "THAAZCZBL8nQUDdBYlk0ZA0JhZAF9vd3NNY3FLVUUwaTRHYVFYemFMWDJmM201d2NpaXhxN2NrbzVPV0ptNjFjRnhVdHVjYldhLVcxbE5ud0szUHUwS2NaZA3VmMmRYamYwVjZAIeE50SVV2V2R0bUU4LUtIT3R4aFNGYlQ4ZAldkSU4yQllkQQZDZD",
-  "token_last_refreshed_at": "2026-10-05T01:42:08.478485+00:00"
+  "threads_access_token": "THAAZCZBL8nQUDdBYmJ2VU0td25zaTNrREh5NThVR2xHRXlPZA19Qd0lsYXZANX24ydW5FV0twYko3N1ZA0M2trMWROem5zdFVGWi1fWG9BX1JrckZAtWWktVWtPVWxqaDZAVdlNtUnBKc3RtbWUyTlFsTk5ULXgwUWk2VjZAXNFVzWlFpaWhKdwZDZD",
+  "token_last_refreshed_at": "2026-10-12T02:08:35.540852+00:00"
 }
