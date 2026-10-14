@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 64,
-  "last_posted_at": "2026-10-14T09:22:27.573589+00:00",
+  "current_episode_id": 65,
+  "last_posted_at": "2026-10-14T16:46:15.990158+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1062,6 +1062,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-14T09:22:27.573589+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 64,
+      "title": "Mitos Bahtera Pasompe dan Pesan Ekologis",
+      "arc": "Jilid 3: Masa Remaja Sawerigading dan Pendidikan Ksatria",
+      "slot": "Hari 22 - Pagi (07:05 WITA)",
+      "post_id": "17984301444093176",
+      "thread_ids": [
+        "17984301444093176",
+        "17910006633556767",
+        "18151290349531773",
+        "18419953414159519"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-14T16:46:15.990158+00:00",
       "image_url": null,
       "mode": "live"
     }
