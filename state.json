@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 75,
-  "last_posted_at": "2026-10-18T00:43:48.030755+00:00",
+  "current_episode_id": 76,
+  "last_posted_at": "2026-10-18T08:41:04.096537+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1249,6 +1249,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-18T00:43:48.030755+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 75,
+      "title": "Sumpah Layar Terkembang Ksatria Samudra",
+      "arc": "Jilid 3: Masa Remaja Sawerigading dan Pendidikan Ksatria",
+      "slot": "Hari 25 - Malam (20:05 WITA)",
+      "post_id": "18337261495274429",
+      "thread_ids": [
+        "18337261495274429",
+        "17923873155429230",
+        "18022879277932397",
+        "17891613333455854"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-18T08:41:04.096537+00:00",
       "image_url": null,
       "mode": "live"
     }
