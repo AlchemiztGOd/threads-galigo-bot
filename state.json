@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 78,
-  "last_posted_at": "2026-10-19T00:55:13.234045+00:00",
+  "current_episode_id": 79,
+  "last_posted_at": "2026-10-19T09:43:13.870522+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1302,8 +1302,25 @@
       "posted_at": "2026-10-19T00:55:13.234045+00:00",
       "image_url": null,
       "mode": "live"
+    },
+    {
+      "episode_id": 78,
+      "title": "Pappaseng: Empat Pilar Kejayaan Negeri",
+      "arc": "Jilid 4: Pertemuan Terlarang dan Goncangan Kosmis Luwu",
+      "slot": "Hari 26 - Malam (20:05 WITA)",
+      "post_id": "18074207066754089",
+      "thread_ids": [
+        "18074207066754089",
+        "17937070512389552",
+        "18117951070806082",
+        "18094066889170812"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-19T09:43:13.870522+00:00",
+      "image_url": null,
+      "mode": "live"
     }
   ],
-  "threads_access_token": "THAAZCZBL8nQUDdBYmJ2VU0td25zaTNrREh5NThVR2xHRXlPZA19Qd0lsYXZANX24ydW5FV0twYko3N1ZA0M2trMWROem5zdFVGWi1fWG9BX1JrckZAtWWktVWtPVWxqaDZAVdlNtUnBKc3RtbWUyTlFsTk5ULXgwUWk2VjZAXNFVzWlFpaWhKdwZDZD",
-  "token_last_refreshed_at": "2026-10-12T02:08:35.540852+00:00"
+  "threads_access_token": "THAAZCZBL8nQUDdBYmIwbG1DVVpGRS1sZAjRVcVR0bkU3bG1ic29aQTBVaDBMU0hHYU8zczJBd2JSeTFMUm0wSXRUTWtiS2dYaGlYMXNnYWQyNEcwWG9QaTZAnMm5ITUhId3dOYkJ2UGJHUTZAWUWJFbTAyNDU2SEVIR0U3VUdKYjF6dmo0QQZDZD",
+  "token_last_refreshed_at": "2026-10-19T09:41:28.320812+00:00"
 }
