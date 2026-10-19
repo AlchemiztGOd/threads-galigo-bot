@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 77,
-  "last_posted_at": "2026-10-18T15:34:12.447098+00:00",
+  "current_episode_id": 78,
+  "last_posted_at": "2026-10-19T00:55:13.234045+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1283,6 +1283,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-18T15:34:12.447098+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 77,
+      "title": "Kearifan Hukum Laut Amanna Gappa",
+      "arc": "Jilid 4: Pertemuan Terlarang dan Goncangan Kosmis Luwu",
+      "slot": "Hari 26 - Siang (12:05 WITA)",
+      "post_id": "18360276793220407",
+      "thread_ids": [
+        "18360276793220407",
+        "18128006722875936",
+        "18117092273079126",
+        "17922901674226181"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-19T00:55:13.234045+00:00",
       "image_url": null,
       "mode": "live"
     }
