@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 84,
-  "last_posted_at": "2026-10-21T01:24:10.948019+00:00",
+  "current_episode_id": 85,
+  "last_posted_at": "2026-10-21T09:13:17.762832+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1402,6 +1402,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-21T01:24:10.948019+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 84,
+      "title": "Mitos Bahtera Pasompe dan Pesan Ekologis",
+      "arc": "Jilid 4: Pertemuan Terlarang dan Goncangan Kosmis Luwu",
+      "slot": "Hari 28 - Malam (20:05 WITA)",
+      "post_id": "18125162023912864",
+      "thread_ids": [
+        "18125162023912864",
+        "18021138812727758",
+        "17983583144905956",
+        "17935423320401921"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-21T09:13:17.762832+00:00",
       "image_url": null,
       "mode": "live"
     }
