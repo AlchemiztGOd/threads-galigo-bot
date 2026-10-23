@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 90,
-  "last_posted_at": "2026-10-23T01:20:00.533742+00:00",
+  "current_episode_id": 91,
+  "last_posted_at": "2026-10-23T09:11:51.037356+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1504,6 +1504,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-23T01:20:00.533742+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 90,
+      "title": "Sumpah Layar Terkembang Ksatria Samudra",
+      "arc": "Jilid 4: Pertemuan Terlarang dan Goncangan Kosmis Luwu",
+      "slot": "Hari 30 - Malam (20:05 WITA)",
+      "post_id": "18080754206379927",
+      "thread_ids": [
+        "18080754206379927",
+        "18639363715027375",
+        "17877839649573958",
+        "17918267178466533"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-23T09:11:51.037356+00:00",
       "image_url": null,
       "mode": "live"
     }
