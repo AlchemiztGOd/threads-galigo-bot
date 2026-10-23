@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 91,
-  "last_posted_at": "2026-10-23T09:11:51.037356+00:00",
+  "current_episode_id": 92,
+  "last_posted_at": "2026-10-23T16:40:23.827814+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1521,6 +1521,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-23T09:11:51.037356+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 91,
+      "title": "Falsafah Luhur Siriq na Pesse",
+      "arc": "Jilid 4: Pertemuan Terlarang dan Goncangan Kosmis Luwu",
+      "slot": "Hari 31 - Pagi (07:05 WITA)",
+      "post_id": "18129249556748218",
+      "thread_ids": [
+        "18129249556748218",
+        "17991923627859476",
+        "18207644290374337",
+        "18132125572751793"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-23T16:40:23.827814+00:00",
       "image_url": null,
       "mode": "live"
     }
