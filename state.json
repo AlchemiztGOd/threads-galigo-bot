@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 98,
-  "last_posted_at": "2026-10-25T15:44:16.429531+00:00",
+  "current_episode_id": 99,
+  "last_posted_at": "2026-10-26T01:03:31.970363+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1640,6 +1640,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-25T15:44:16.429531+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 98,
+      "title": "Pappaseng: Empat Pilar Kejayaan Negeri",
+      "arc": "Jilid 4: Pertemuan Terlarang dan Goncangan Kosmis Luwu",
+      "slot": "Hari 33 - Siang (12:05 WITA)",
+      "post_id": "18075388784764946",
+      "thread_ids": [
+        "18075388784764946",
+        "18130765649509774",
+        "18362261992219786",
+        "18169685908479802"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-26T01:03:31.970363+00:00",
       "image_url": null,
       "mode": "live"
     }
