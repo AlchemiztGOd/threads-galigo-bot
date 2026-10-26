@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 99,
-  "last_posted_at": "2026-10-26T01:03:31.970363+00:00",
+  "current_episode_id": 100,
+  "last_posted_at": "2026-10-26T09:53:13.290925+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1659,8 +1659,25 @@
       "posted_at": "2026-10-26T01:03:31.970363+00:00",
       "image_url": null,
       "mode": "live"
+    },
+    {
+      "episode_id": 99,
+      "title": "Mitos Bahtera Pasompe dan Pesan Ekologis",
+      "arc": "Jilid 4: Pertemuan Terlarang dan Goncangan Kosmis Luwu",
+      "slot": "Hari 33 - Malam (20:05 WITA)",
+      "post_id": "17973694563157594",
+      "thread_ids": [
+        "17973694563157594",
+        "17909656839588000",
+        "17912577387516784",
+        "17999401514826949"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-26T09:53:13.290925+00:00",
+      "image_url": null,
+      "mode": "live"
     }
   ],
-  "threads_access_token": "THAAZCZBL8nQUDdBYmIwbG1DVVpGRS1sZAjRVcVR0bkU3bG1ic29aQTBVaDBMU0hHYU8zczJBd2JSeTFMUm0wSXRUTWtiS2dYaGlYMXNnYWQyNEcwWG9QaTZAnMm5ITUhId3dOYkJ2UGJHUTZAWUWJFbTAyNDU2SEVIR0U3VUdKYjF6dmo0QQZDZD",
-  "token_last_refreshed_at": "2026-10-19T09:41:28.320812+00:00"
+  "threads_access_token": "THAAZCZBL8nQUDdBYmFzUWtCSmQtRDdvaFlTNmNTQ3JkcUJRUmtXMlA5MzkxOGRVckM2OTlXUVRHZAkt1Tkxtc3FHaDlhLXlpQXo3ckNDZAFRtY19fb0JDMkZA2cWV5WHltenNYQnZANanlaQ0xKc2w3SGpJbmZAaOFJvYWF3TlVPdXRQdFdoUQZDZD",
+  "token_last_refreshed_at": "2026-10-26T09:51:20.386072+00:00"
 }
