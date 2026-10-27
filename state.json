@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 103,
-  "last_posted_at": "2026-10-27T09:41:17.563411+00:00",
+  "current_episode_id": 104,
+  "last_posted_at": "2026-10-27T17:40:41.682186+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1725,6 +1725,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-27T09:41:17.563411+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 103,
+      "title": "Pappaseng: Empat Pilar Kejayaan Negeri",
+      "arc": "Jilid 5: Pohon Keramat Welenrengnge dan Amukan Garuda",
+      "slot": "Hari 35 - Pagi (07:05 WITA)",
+      "post_id": "17989278657084445",
+      "thread_ids": [
+        "17989278657084445",
+        "18120135785288005",
+        "18145520821590580",
+        "18127429336914133"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-27T17:40:41.682186+00:00",
       "image_url": null,
       "mode": "live"
     }
