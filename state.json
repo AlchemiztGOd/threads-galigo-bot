@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 102,
-  "last_posted_at": "2026-10-27T01:53:20.288708+00:00",
+  "current_episode_id": 103,
+  "last_posted_at": "2026-10-27T09:41:17.563411+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1708,6 +1708,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-27T01:53:20.288708+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 102,
+      "title": "Kearifan Hukum Laut Amanna Gappa",
+      "arc": "Jilid 5: Pohon Keramat Welenrengnge dan Amukan Garuda",
+      "slot": "Hari 34 - Malam (20:05 WITA)",
+      "post_id": "18157998118509962",
+      "thread_ids": [
+        "18157998118509962",
+        "18012419348993350",
+        "18221393506342327",
+        "17966452131227821"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-27T09:41:17.563411+00:00",
       "image_url": null,
       "mode": "live"
     }
