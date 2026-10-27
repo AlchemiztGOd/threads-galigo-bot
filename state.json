@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 101,
-  "last_posted_at": "2026-10-26T18:26:29.841420+00:00",
+  "current_episode_id": 102,
+  "last_posted_at": "2026-10-27T01:53:20.288708+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1691,6 +1691,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-26T18:26:29.841420+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 101,
+      "title": "Falsafah Luhur Siriq na Pesse",
+      "arc": "Jilid 5: Pohon Keramat Welenrengnge dan Amukan Garuda",
+      "slot": "Hari 34 - Siang (12:05 WITA)",
+      "post_id": "18109972070236150",
+      "thread_ids": [
+        "18109972070236150",
+        "18134545618813547",
+        "17987316546105850",
+        "18380832313240545"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-27T01:53:20.288708+00:00",
       "image_url": null,
       "mode": "live"
     }
