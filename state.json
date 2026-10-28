@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 104,
-  "last_posted_at": "2026-10-27T17:40:41.682186+00:00",
+  "current_episode_id": 105,
+  "last_posted_at": "2026-10-28T02:04:35.827938+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1742,6 +1742,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-27T17:40:41.682186+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 104,
+      "title": "Mitos Bahtera Pasompe dan Pesan Ekologis",
+      "arc": "Jilid 5: Pohon Keramat Welenrengnge dan Amukan Garuda",
+      "slot": "Hari 35 - Siang (12:05 WITA)",
+      "post_id": "18035638643895344",
+      "thread_ids": [
+        "18035638643895344",
+        "18104392160328406",
+        "18351328777284354",
+        "18194763199400565"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-28T02:04:35.827938+00:00",
       "image_url": null,
       "mode": "live"
     }
