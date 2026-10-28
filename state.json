@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 105,
-  "last_posted_at": "2026-10-28T02:04:35.827938+00:00",
+  "current_episode_id": 106,
+  "last_posted_at": "2026-10-28T10:26:13.002956+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -1759,6 +1759,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-10-28T02:04:35.827938+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 105,
+      "title": "Sumpah Layar Terkembang Ksatria Samudra",
+      "arc": "Jilid 5: Pohon Keramat Welenrengnge dan Amukan Garuda",
+      "slot": "Hari 35 - Malam (20:05 WITA)",
+      "post_id": "18131308813692803",
+      "thread_ids": [
+        "18131308813692803",
+        "18392949475162578",
+        "18091341758243904",
+        "18385271794230517"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-10-28T10:26:13.002956+00:00",
       "image_url": null,
       "mode": "live"
     }
