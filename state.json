@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 120,
-  "last_posted_at": "2026-11-02T02:10:53.699419+00:00",
+  "current_episode_id": 121,
+  "last_posted_at": "2026-11-02T12:06:16.266901+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2016,8 +2016,25 @@
       "posted_at": "2026-11-02T02:10:53.699419+00:00",
       "image_url": null,
       "mode": "live"
+    },
+    {
+      "episode_id": 120,
+      "title": "Sumpah Layar Terkembang Ksatria Samudra",
+      "arc": "Jilid 5: Pohon Keramat Welenrengnge dan Amukan Garuda",
+      "slot": "Hari 40 - Malam (20:05 WITA)",
+      "post_id": "18108829187113988",
+      "thread_ids": [
+        "18108829187113988",
+        "18080950772402626",
+        "18011334569778174",
+        "17899466532612615"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-02T12:06:16.266901+00:00",
+      "image_url": null,
+      "mode": "live"
     }
   ],
-  "threads_access_token": "THAAZCZBL8nQUDdBYmFzUWtCSmQtRDdvaFlTNmNTQ3JkcUJRUmtXMlA5MzkxOGRVckM2OTlXUVRHZAkt1Tkxtc3FHaDlhLXlpQXo3ckNDZAFRtY19fb0JDMkZA2cWV5WHltenNYQnZANanlaQ0xKc2w3SGpJbmZAaOFJvYWF3TlVPdXRQdFdoUQZDZD",
-  "token_last_refreshed_at": "2026-10-26T09:51:20.386072+00:00"
+  "threads_access_token": "THAAZCZBL8nQUDdBYloyMkttb09VZAkJNQkVjWFZAaRFQwZAVlQMUh4MVNKa0RSdmRxdmt6NW9qZAl9Nb2w5SEdSVmo2Tkw3UU8tbTdnbUxpcVNIM0dhRWpuQXdidEJNYW5TQngwdndPRVJ0aThNbUdqa1VMckFHZAUc2bEZAJY0JMc3RmVHRzUQZDZD",
+  "token_last_refreshed_at": "2026-11-02T12:04:48.259797+00:00"
 }
