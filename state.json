@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 122,
-  "last_posted_at": "2026-11-02T21:41:24.889549+00:00",
+  "current_episode_id": 123,
+  "last_posted_at": "2026-11-03T03:52:29.266840+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2048,6 +2048,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-02T21:41:24.889549+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 122,
+      "title": "Kearifan Hukum Laut Amanna Gappa",
+      "arc": "Jilid 5: Pohon Keramat Welenrengnge dan Amukan Garuda",
+      "slot": "Hari 41 - Siang (12:05 WITA)",
+      "post_id": "18100985669653748",
+      "thread_ids": [
+        "18100985669653748",
+        "17914527939472104",
+        "18116716685109351",
+        "18160200232508030"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-03T03:52:29.266840+00:00",
       "image_url": null,
       "mode": "live"
     }
