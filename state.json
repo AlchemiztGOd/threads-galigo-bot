@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 125,
-  "last_posted_at": "2026-11-03T19:15:16.316987+00:00",
+  "current_episode_id": 126,
+  "last_posted_at": "2026-11-04T02:58:01.043659+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2099,6 +2099,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-03T19:15:16.316987+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 125,
+      "title": "Sumpah Layar Terkembang Ksatria Samudra",
+      "arc": "Jilid 5: Pohon Keramat Welenrengnge dan Amukan Garuda",
+      "slot": "Hari 42 - Siang (12:05 WITA)",
+      "post_id": "18111389881916190",
+      "thread_ids": [
+        "18111389881916190",
+        "18347085403248886",
+        "18651995569058557",
+        "18111580403524416"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-04T02:58:01.043659+00:00",
       "image_url": null,
       "mode": "live"
     }
