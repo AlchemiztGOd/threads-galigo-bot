@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 126,
-  "last_posted_at": "2026-11-04T02:58:01.043659+00:00",
+  "current_episode_id": 127,
+  "last_posted_at": "2026-11-04T11:56:42.035162+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2116,6 +2116,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-04T02:58:01.043659+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 126,
+      "title": "Falsafah Luhur Siriq na Pesse",
+      "arc": "Jilid 6: Pembuatan Bahtera Wakka Pasompe dan Sumpah Sawerigading",
+      "slot": "Hari 42 - Malam (20:05 WITA)",
+      "post_id": "17925058176446765",
+      "thread_ids": [
+        "17925058176446765",
+        "18102583631063848",
+        "17915014128480116",
+        "18078817862447262"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-04T11:56:42.035162+00:00",
       "image_url": null,
       "mode": "live"
     }
