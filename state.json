@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 130,
-  "last_posted_at": "2026-11-05T11:58:55.800008+00:00",
+  "current_episode_id": 131,
+  "last_posted_at": "2026-11-05T19:40:16.983987+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2184,6 +2184,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-05T11:58:55.800008+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 130,
+      "title": "Sumpah Layar Terkembang Ksatria Samudra",
+      "arc": "Jilid 6: Pembuatan Bahtera Wakka Pasompe dan Sumpah Sawerigading",
+      "slot": "Hari 44 - Pagi (07:05 WITA)",
+      "post_id": "18030036908697528",
+      "thread_ids": [
+        "18030036908697528",
+        "18101353421382493",
+        "18131143315874960",
+        "18127931516476189"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-05T19:40:16.983987+00:00",
       "image_url": null,
       "mode": "live"
     }
