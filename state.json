@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 133,
-  "last_posted_at": "2026-11-06T11:55:08.185207+00:00",
+  "current_episode_id": 134,
+  "last_posted_at": "2026-11-06T19:02:11.703165+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2235,6 +2235,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-06T11:55:08.185207+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 133,
+      "title": "Pappaseng: Empat Pilar Kejayaan Negeri",
+      "arc": "Jilid 6: Pembuatan Bahtera Wakka Pasompe dan Sumpah Sawerigading",
+      "slot": "Hari 45 - Pagi (07:05 WITA)",
+      "post_id": "18116674379132747",
+      "thread_ids": [
+        "18116674379132747",
+        "18132965488834117",
+        "18120563051324183",
+        "17912253663577838"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-06T19:02:11.703165+00:00",
       "image_url": null,
       "mode": "live"
     }
