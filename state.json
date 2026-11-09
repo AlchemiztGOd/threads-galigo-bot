@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 141,
-  "last_posted_at": "2026-11-09T02:27:56.294664+00:00",
+  "current_episode_id": 142,
+  "last_posted_at": "2026-11-09T12:39:04.263587+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2373,8 +2373,25 @@
       "posted_at": "2026-11-09T02:27:56.294664+00:00",
       "image_url": null,
       "mode": "live"
+    },
+    {
+      "episode_id": 141,
+      "title": "Falsafah Luhur Siriq na Pesse",
+      "arc": "Jilid 6: Pembuatan Bahtera Wakka Pasompe dan Sumpah Sawerigading",
+      "slot": "Hari 47 - Malam (20:05 WITA)",
+      "post_id": "18035665256856936",
+      "thread_ids": [
+        "18035665256856936",
+        "18077387291733478",
+        "18385393990233886",
+        "18081638255738184"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-09T12:39:04.263587+00:00",
+      "image_url": null,
+      "mode": "live"
     }
   ],
-  "threads_access_token": "THAAZCZBL8nQUDdBYloyMkttb09VZAkJNQkVjWFZAaRFQwZAVlQMUh4MVNKa0RSdmRxdmt6NW9qZAl9Nb2w5SEdSVmo2Tkw3UU8tbTdnbUxpcVNIM0dhRWpuQXdidEJNYW5TQngwdndPRVJ0aThNbUdqa1VMckFHZAUc2bEZAJY0JMc3RmVHRzUQZDZD",
-  "token_last_refreshed_at": "2026-11-02T12:04:48.259797+00:00"
+  "threads_access_token": "THAAZCZBL8nQUDdBYmFhaXAwekc2LWFwVTRHSHZAEdFRIc0toU1hFbFRjWHNJY2N6ajBCamluVzFiZAXJlS2xRdUEtenpucnlvWnlINWVjMzNQQnE4V0ZArbEZAjbUxQSkdLcFBUeVJkVlR0SG1qMlJHUmNIY0tONzRkZATdrTERjLVBhSjlKUQZDZD",
+  "token_last_refreshed_at": "2026-11-09T12:37:21.553549+00:00"
 }
