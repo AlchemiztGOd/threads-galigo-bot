@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 144,
-  "last_posted_at": "2026-11-10T19:27:30.526272+00:00",
+  "current_episode_id": 145,
+  "last_posted_at": "2026-11-11T02:36:10.619339+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2422,6 +2422,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-10T19:27:30.526272+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 144,
+      "title": "Mitos Bahtera Pasompe dan Pesan Ekologis",
+      "arc": "Jilid 6: Pembuatan Bahtera Wakka Pasompe dan Sumpah Sawerigading",
+      "slot": "Hari 48 - Malam (20:05 WITA)",
+      "post_id": "18035060972908439",
+      "thread_ids": [
+        "18035060972908439",
+        "18116563739270881",
+        "18108589019576140",
+        "18123481723943427"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-11T02:36:10.619339+00:00",
       "image_url": null,
       "mode": "live"
     }
