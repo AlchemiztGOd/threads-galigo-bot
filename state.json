@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 147,
-  "last_posted_at": "2026-11-11T19:22:24.449684+00:00",
+  "current_episode_id": 148,
+  "last_posted_at": "2026-11-12T03:41:10.036009+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2473,6 +2473,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-11T19:22:24.449684+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 147,
+      "title": "Kearifan Hukum Laut Amanna Gappa",
+      "arc": "Jilid 6: Pembuatan Bahtera Wakka Pasompe dan Sumpah Sawerigading",
+      "slot": "Hari 49 - Malam (20:05 WITA)",
+      "post_id": "18124274758911814",
+      "thread_ids": [
+        "18124274758911814",
+        "18426795442159764",
+        "18087019862520843",
+        "18141793930623275"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-12T03:41:10.036009+00:00",
       "image_url": null,
       "mode": "live"
     }
