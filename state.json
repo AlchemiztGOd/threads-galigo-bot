@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 151,
-  "last_posted_at": "2026-11-13T11:58:36.438938+00:00",
+  "current_episode_id": 152,
+  "last_posted_at": "2026-11-13T19:22:27.028249+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2541,6 +2541,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-13T11:58:36.438938+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 151,
+      "title": "Falsafah Luhur Siriq na Pesse",
+      "arc": "Jilid 7: Pelayaran Akbar Mengarungi Lautan Nusantara",
+      "slot": "Hari 51 - Pagi (07:05 WITA)",
+      "post_id": "18351718762257509",
+      "thread_ids": [
+        "18351718762257509",
+        "18092443751246933",
+        "17942336847388982",
+        "17907573756599495"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-13T19:22:27.028249+00:00",
       "image_url": null,
       "mode": "live"
     }
