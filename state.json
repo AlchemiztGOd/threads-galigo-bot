@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 155,
-  "last_posted_at": "2026-11-14T17:46:20.021958+00:00",
+  "current_episode_id": 156,
+  "last_posted_at": "2026-11-15T02:27:52.474261+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2609,6 +2609,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-14T17:46:20.021958+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 155,
+      "title": "Sumpah Layar Terkembang Ksatria Samudra",
+      "arc": "Jilid 7: Pelayaran Akbar Mengarungi Lautan Nusantara",
+      "slot": "Hari 52 - Siang (12:05 WITA)",
+      "post_id": "18180512140435767",
+      "thread_ids": [
+        "18180512140435767",
+        "18455736022122052",
+        "18440320021178862",
+        "18117676259154017"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-15T02:27:52.474261+00:00",
       "image_url": null,
       "mode": "live"
     }
