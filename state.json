@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 159,
-  "last_posted_at": "2026-11-16T02:38:10.781979+00:00",
+  "current_episode_id": 160,
+  "last_posted_at": "2026-11-16T12:31:11.446861+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2677,6 +2677,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-16T02:38:10.781979+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 159,
+      "title": "Mitos Bahtera Pasompe dan Pesan Ekologis",
+      "arc": "Jilid 7: Pelayaran Akbar Mengarungi Lautan Nusantara",
+      "slot": "Hari 53 - Malam (20:05 WITA)",
+      "post_id": "18037298213887134",
+      "thread_ids": [
+        "18037298213887134",
+        "17872469943695596",
+        "18099135548458832",
+        "18116984456591864"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-16T12:31:11.446861+00:00",
       "image_url": null,
       "mode": "live"
     }
