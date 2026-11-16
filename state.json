@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 158,
-  "last_posted_at": "2026-11-15T18:36:52.372046+00:00",
+  "current_episode_id": 159,
+  "last_posted_at": "2026-11-16T02:38:10.781979+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2660,6 +2660,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-15T18:36:52.372046+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 158,
+      "title": "Pappaseng: Empat Pilar Kejayaan Negeri",
+      "arc": "Jilid 7: Pelayaran Akbar Mengarungi Lautan Nusantara",
+      "slot": "Hari 53 - Siang (12:05 WITA)",
+      "post_id": "18124443805937190",
+      "thread_ids": [
+        "18124443805937190",
+        "18104961671549738",
+        "18046476746837384",
+        "18035696939674542"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-16T02:38:10.781979+00:00",
       "image_url": null,
       "mode": "live"
     }
