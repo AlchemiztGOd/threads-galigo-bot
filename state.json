@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 160,
-  "last_posted_at": "2026-11-16T12:31:11.446861+00:00",
+  "current_episode_id": 161,
+  "last_posted_at": "2026-11-17T04:59:52.342456+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2696,8 +2696,25 @@
       "posted_at": "2026-11-16T12:31:11.446861+00:00",
       "image_url": null,
       "mode": "live"
+    },
+    {
+      "episode_id": 160,
+      "title": "Sumpah Layar Terkembang Ksatria Samudra",
+      "arc": "Jilid 7: Pelayaran Akbar Mengarungi Lautan Nusantara",
+      "slot": "Hari 54 - Pagi (07:05 WITA)",
+      "post_id": "18116816429151375",
+      "thread_ids": [
+        "18116816429151375",
+        "18137419984657745",
+        "18140654230646600",
+        "18344328028262185"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-17T04:59:52.342456+00:00",
+      "image_url": null,
+      "mode": "live"
     }
   ],
-  "threads_access_token": "THAAZCZBL8nQUDdBYmFhaXAwekc2LWFwVTRHSHZAEdFRIc0toU1hFbFRjWHNJY2N6ajBCamluVzFiZAXJlS2xRdUEtenpucnlvWnlINWVjMzNQQnE4V0ZArbEZAjbUxQSkdLcFBUeVJkVlR0SG1qMlJHUmNIY0tONzRkZATdrTERjLVBhSjlKUQZDZD",
-  "token_last_refreshed_at": "2026-11-09T12:37:21.553549+00:00"
+  "threads_access_token": "THAAZCZBL8nQUDdBYmJVeHIta1RkaVJwZAmpzWXpkZAXFoRnZAhMnFlT1lkdFpKNWxKZA1ZAHSnI3MENSUDIxa2ROYUd2c01OV1poa0h3WmNSSVV5SXhwdkIxbzRSRXdsNk9Sb0Q0bjJhYTd3YVZAsR2lmVFFxektOM2JJdDRmUEhlSExrZADBKdwZDZD",
+  "token_last_refreshed_at": "2026-11-17T04:58:23.077300+00:00"
 }
