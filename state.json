@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 172,
-  "last_posted_at": "2026-11-22T12:22:06.588841+00:00",
+  "current_episode_id": 173,
+  "last_posted_at": "2026-11-23T03:35:44.140643+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2898,6 +2898,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-22T12:22:06.588841+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 172,
+      "title": "Kearifan Hukum Laut Amanna Gappa",
+      "arc": "Jilid 7: Pelayaran Akbar Mengarungi Lautan Nusantara",
+      "slot": "Hari 58 - Pagi (07:05 WITA)",
+      "post_id": "18111432149624360",
+      "thread_ids": [
+        "18111432149624360",
+        "18018250145982344",
+        "18112323910910238",
+        "17886627585527859"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-23T03:35:44.140643+00:00",
       "image_url": null,
       "mode": "live"
     }
