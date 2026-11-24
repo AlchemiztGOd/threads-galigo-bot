@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 174,
-  "last_posted_at": "2026-11-23T14:10:10.565391+00:00",
+  "current_episode_id": 175,
+  "last_posted_at": "2026-11-24T06:50:30.086574+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2934,8 +2934,25 @@
       "posted_at": "2026-11-23T14:10:10.565391+00:00",
       "image_url": null,
       "mode": "live"
+    },
+    {
+      "episode_id": 174,
+      "title": "Mitos Bahtera Pasompe dan Pesan Ekologis",
+      "arc": "Jilid 7: Pelayaran Akbar Mengarungi Lautan Nusantara",
+      "slot": "Hari 58 - Malam (20:05 WITA)",
+      "post_id": "17965692021239374",
+      "thread_ids": [
+        "17965692021239374",
+        "18101678003388104",
+        "18355051855266956",
+        "17997208821061478"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-24T06:50:30.086574+00:00",
+      "image_url": null,
+      "mode": "live"
     }
   ],
-  "threads_access_token": "THAAZCZBL8nQUDdBYmJVeHIta1RkaVJwZAmpzWXpkZAXFoRnZAhMnFlT1lkdFpKNWxKZA1ZAHSnI3MENSUDIxa2ROYUd2c01OV1poa0h3WmNSSVV5SXhwdkIxbzRSRXdsNk9Sb0Q0bjJhYTd3YVZAsR2lmVFFxektOM2JJdDRmUEhlSExrZADBKdwZDZD",
-  "token_last_refreshed_at": "2026-11-17T04:58:23.077300+00:00"
+  "threads_access_token": "THAAZCZBL8nQUDdBYlltc09iNmgyV1NXSEtpLUlPS2ZAPTE16U20xVkNqWjVNOXVoNmFnTllOSkEteTZAsZATh2MktYcnNzM0pVd25id0Rya1REeGpzc1g1V1AzQV9NdUFmQWVuZA0dfeXZAzZAV9UNlNJWElHaTJ0SkVvWDdGUUdFUk9nTE9pZAwZDZD",
+  "token_last_refreshed_at": "2026-11-24T06:48:39.106183+00:00"
 }
