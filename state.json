@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 176,
-  "last_posted_at": "2026-11-24T22:02:20.929412+00:00",
+  "current_episode_id": 177,
+  "last_posted_at": "2026-11-25T05:17:50.081103+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2966,6 +2966,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-24T22:02:20.929412+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 176,
+      "title": "Falsafah Luhur Siriq na Pesse",
+      "arc": "Jilid 8: Pendaratan di Tana Kelling dan Perang Penaklukan",
+      "slot": "Hari 59 - Siang (12:05 WITA)",
+      "post_id": "18231051679330766",
+      "thread_ids": [
+        "18231051679330766",
+        "18047538680837941",
+        "17953898793301375",
+        "18361220329216129"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-25T05:17:50.081103+00:00",
       "image_url": null,
       "mode": "live"
     }
