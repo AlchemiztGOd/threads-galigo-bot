@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 177,
-  "last_posted_at": "2026-11-25T05:17:50.081103+00:00",
+  "current_episode_id": 178,
+  "last_posted_at": "2026-11-25T21:15:47.909543+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -2983,6 +2983,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-25T05:17:50.081103+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 177,
+      "title": "Kearifan Hukum Laut Amanna Gappa",
+      "arc": "Jilid 8: Pendaratan di Tana Kelling dan Perang Penaklukan",
+      "slot": "Hari 59 - Malam (20:05 WITA)",
+      "post_id": "18172663771462684",
+      "thread_ids": [
+        "18172663771462684",
+        "18113518304225587",
+        "18183128071453230",
+        "18346848841279376"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-25T21:15:47.909543+00:00",
       "image_url": null,
       "mode": "live"
     }
