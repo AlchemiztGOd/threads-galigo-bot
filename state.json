@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 179,
-  "last_posted_at": "2026-11-26T04:45:34.606292+00:00",
+  "current_episode_id": 180,
+  "last_posted_at": "2026-11-26T21:04:47.773163+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -3017,6 +3017,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-26T04:45:34.606292+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 179,
+      "title": "Mitos Bahtera Pasompe dan Pesan Ekologis",
+      "arc": "Jilid 8: Pendaratan di Tana Kelling dan Perang Penaklukan",
+      "slot": "Hari 60 - Siang (12:05 WITA)",
+      "post_id": "18242238871316243",
+      "thread_ids": [
+        "18242238871316243",
+        "18022198829959872",
+        "18113600201303010",
+        "17983987323004498"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-26T21:04:47.773163+00:00",
       "image_url": null,
       "mode": "live"
     }
