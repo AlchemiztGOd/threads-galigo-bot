@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 178,
-  "last_posted_at": "2026-11-25T21:15:47.909543+00:00",
+  "current_episode_id": 179,
+  "last_posted_at": "2026-11-26T04:45:34.606292+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -3000,6 +3000,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-25T21:15:47.909543+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 178,
+      "title": "Pappaseng: Empat Pilar Kejayaan Negeri",
+      "arc": "Jilid 8: Pendaratan di Tana Kelling dan Perang Penaklukan",
+      "slot": "Hari 60 - Pagi (07:05 WITA)",
+      "post_id": "18136284169683316",
+      "thread_ids": [
+        "18136284169683316",
+        "18190043578418579",
+        "17923638753527959",
+        "17913661239665518"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-26T04:45:34.606292+00:00",
       "image_url": null,
       "mode": "live"
     }
