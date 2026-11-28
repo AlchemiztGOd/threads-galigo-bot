@@ -1,6 +1,6 @@
 {
-  "current_episode_id": 182,
-  "last_posted_at": "2026-11-27T20:49:26.384115+00:00",
+  "current_episode_id": 183,
+  "last_posted_at": "2026-11-28T04:37:17.637792+00:00",
   "history": [
     {
       "episode_id": 1,
@@ -3068,6 +3068,23 @@
       ],
       "parts_count": 4,
       "posted_at": "2026-11-27T20:49:26.384115+00:00",
+      "image_url": null,
+      "mode": "live"
+    },
+    {
+      "episode_id": 182,
+      "title": "Kearifan Hukum Laut Amanna Gappa",
+      "arc": "Jilid 8: Pendaratan di Tana Kelling dan Perang Penaklukan",
+      "slot": "Hari 61 - Siang (12:05 WITA)",
+      "post_id": "18226704352341444",
+      "thread_ids": [
+        "18226704352341444",
+        "18097684421688924",
+        "17929252848441459",
+        "18128926753920469"
+      ],
+      "parts_count": 4,
+      "posted_at": "2026-11-28T04:37:17.637792+00:00",
       "image_url": null,
       "mode": "live"
     }
